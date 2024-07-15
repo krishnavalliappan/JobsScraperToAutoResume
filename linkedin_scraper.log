@@ -1,0 +1,2601 @@
+2024-07-11 15:55:16,910 - INFO - Loaded cookies from linkedin_cookies.pkl
+2024-07-11 15:55:24,084 - INFO - Successfully logged in using cookies
+2024-07-11 15:55:24,109 - INFO - Saved cookies to linkedin_cookies.pkl
+2024-07-11 15:55:28,597 - INFO - Searching for jobs with keyword: data analyst
+2024-07-11 15:55:28,876 - INFO - Search results loaded successfully for data analyst in Canada with 73 results
+2024-07-11 15:55:28,876 - INFO - Search results: data analyst in Canada, Total jobs: 73
+2024-07-11 15:55:33,322 - INFO - Found 25 job listings on page 1
+2024-07-11 15:55:52,296 - INFO - Successfully scraped job 1: Business Informatics, Analytics & Operations Consultant III
+2024-07-11 15:56:05,516 - INFO - Successfully scraped job 2: Analyst/Senior Analyst, Analytics and Model Management
+2024-07-11 15:56:22,995 - INFO - Successfully scraped job 3: Data Analyst II
+2024-07-11 15:56:37,620 - INFO - Successfully scraped job 4: Data Analyst II
+2024-07-12 09:33:07,902 - INFO - Loaded cookies from linkedin_cookies.pkl
+2024-07-12 09:33:13,892 - INFO - Successfully logged in using cookies
+2024-07-12 09:33:13,967 - INFO - Saved cookies to linkedin_cookies.pkl
+2024-07-12 09:33:16,635 - INFO - Searching for jobs with keyword: data analyst
+2024-07-12 09:33:17,623 - INFO - Search results loaded successfully for data analyst in Canada with 47 results
+2024-07-12 09:33:17,623 - INFO - Search results: data analyst in Canada, Total jobs: 47
+2024-07-12 09:33:22,128 - INFO - Found 25 job listings on page 1
+2024-07-12 09:33:38,528 - INFO - Successfully scraped job 1: Data Analyst (0 Experience Required)
+2024-07-12 09:33:49,239 - ERROR - Error extracting job description: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,241 - INFO - Successfully scraped job 2: Data Analyst - Search (0 Experience Required)
+2024-07-12 09:33:49,242 - ERROR - Error during element scrolling: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,243 - WARNING - Couldn't click div.job-card-container--clickable for job 3, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,244 - ERROR - Error processing job listing 3 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,245 - WARNING - Couldn't click div.job-card-container--clickable for job 4, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,245 - ERROR - Error processing job listing 4 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,247 - WARNING - Couldn't click div.job-card-container--clickable for job 5, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,248 - ERROR - Error processing job listing 5 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,249 - WARNING - Couldn't click div.job-card-container--clickable for job 6, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,251 - ERROR - Error processing job listing 6 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,252 - WARNING - Couldn't click div.job-card-container--clickable for job 7, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,252 - ERROR - Error processing job listing 7 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,253 - WARNING - Couldn't click div.job-card-container--clickable for job 8, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,254 - ERROR - Error processing job listing 8 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,255 - WARNING - Couldn't click div.job-card-container--clickable for job 9, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,256 - ERROR - Error processing job listing 9 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,256 - WARNING - Couldn't click div.job-card-container--clickable for job 10, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,258 - ERROR - Error processing job listing 10 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,259 - WARNING - Couldn't click div.job-card-container--clickable for job 11, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,259 - ERROR - Error processing job listing 11 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,260 - WARNING - Couldn't click div.job-card-container--clickable for job 12, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,261 - ERROR - Error processing job listing 12 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,262 - WARNING - Couldn't click div.job-card-container--clickable for job 13, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,263 - ERROR - Error processing job listing 13 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,264 - WARNING - Couldn't click div.job-card-container--clickable for job 14, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,265 - ERROR - Error processing job listing 14 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,266 - WARNING - Couldn't click div.job-card-container--clickable for job 15, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,267 - ERROR - Error processing job listing 15 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,268 - WARNING - Couldn't click div.job-card-container--clickable for job 16, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,269 - ERROR - Error processing job listing 16 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,270 - WARNING - Couldn't click div.job-card-container--clickable for job 17, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,271 - ERROR - Error processing job listing 17 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,271 - WARNING - Couldn't click div.job-card-container--clickable for job 18, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,272 - ERROR - Error processing job listing 18 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,273 - WARNING - Couldn't click div.job-card-container--clickable for job 19, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,273 - ERROR - Error processing job listing 19 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,274 - WARNING - Couldn't click div.job-card-container--clickable for job 20, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,276 - ERROR - Error processing job listing 20 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,280 - WARNING - Couldn't click div.job-card-container--clickable for job 21, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,282 - ERROR - Error processing job listing 21 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,284 - WARNING - Couldn't click div.job-card-container--clickable for job 22, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,285 - ERROR - Error processing job listing 22 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,287 - WARNING - Couldn't click div.job-card-container--clickable for job 23, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,288 - ERROR - Error processing job listing 23 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,289 - WARNING - Couldn't click div.job-card-container--clickable for job 24, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,290 - ERROR - Error processing job listing 24 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,291 - WARNING - Couldn't click div.job-card-container--clickable for job 25, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,291 - ERROR - Error processing job listing 25 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,293 - ERROR - Error clicking page button: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,296 - ERROR - Error during element scrolling: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:33:49,297 - ERROR - Error processing page 2: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001008e2a80 chromedriver + 4385408
+1   chromedriver                        0x00000001008db38c chromedriver + 4354956
+2   chromedriver                        0x00000001004f8b0c chromedriver + 281356
+3   chromedriver                        0x00000001004d3af0 chromedriver + 129776
+4   chromedriver                        0x0000000100560314 chromedriver + 705300
+5   chromedriver                        0x0000000100573438 chromedriver + 783416
+6   chromedriver                        0x000000010052feec chromedriver + 507628
+7   chromedriver                        0x00000001005308c4 chromedriver + 510148
+8   chromedriver                        0x00000001008aa43c chromedriver + 4154428
+9   chromedriver                        0x00000001008aeea0 chromedriver + 4173472
+10  chromedriver                        0x000000010088fff8 chromedriver + 4046840
+11  chromedriver                        0x00000001008af78c chromedriver + 4175756
+12  chromedriver                        0x0000000100882fb8 chromedriver + 3993528
+13  chromedriver                        0x00000001008cd21c chromedriver + 4297244
+14  chromedriver                        0x00000001008cd398 chromedriver + 4297624
+15  chromedriver                        0x00000001008daf84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:03,524 - INFO - Loaded cookies from linkedin_cookies.pkl
+2024-07-12 09:39:08,442 - INFO - Successfully logged in using cookies
+2024-07-12 09:39:08,476 - INFO - Saved cookies to linkedin_cookies.pkl
+2024-07-12 09:39:10,726 - INFO - Searching for jobs with keyword: data analyst
+2024-07-12 09:39:11,495 - INFO - Search results loaded successfully for data analyst in Canada with 47 results
+2024-07-12 09:39:11,495 - INFO - Search results: data analyst in Canada, Total jobs: 47
+2024-07-12 09:39:15,961 - INFO - Found 25 job listings on page 1
+2024-07-12 09:39:20,413 - ERROR - Major error in crab_job_details: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,414 - INFO - Successfully scraped job 1: None
+2024-07-12 09:39:20,415 - ERROR - Error during element scrolling: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,417 - WARNING - Couldn't click div.job-card-container--clickable for job 2, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,418 - ERROR - Error processing job listing 2 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,419 - WARNING - Couldn't click div.job-card-container--clickable for job 3, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,420 - ERROR - Error processing job listing 3 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,421 - WARNING - Couldn't click div.job-card-container--clickable for job 4, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,425 - ERROR - Error processing job listing 4 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,428 - WARNING - Couldn't click div.job-card-container--clickable for job 5, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,430 - ERROR - Error processing job listing 5 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,431 - WARNING - Couldn't click div.job-card-container--clickable for job 6, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,433 - ERROR - Error processing job listing 6 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,434 - WARNING - Couldn't click div.job-card-container--clickable for job 7, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,435 - ERROR - Error processing job listing 7 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,436 - WARNING - Couldn't click div.job-card-container--clickable for job 8, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,436 - ERROR - Error processing job listing 8 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,437 - WARNING - Couldn't click div.job-card-container--clickable for job 9, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,438 - ERROR - Error processing job listing 9 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,439 - WARNING - Couldn't click div.job-card-container--clickable for job 10, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,440 - ERROR - Error processing job listing 10 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,441 - WARNING - Couldn't click div.job-card-container--clickable for job 11, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,442 - ERROR - Error processing job listing 11 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,443 - WARNING - Couldn't click div.job-card-container--clickable for job 12, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,443 - ERROR - Error processing job listing 12 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,444 - WARNING - Couldn't click div.job-card-container--clickable for job 13, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,445 - ERROR - Error processing job listing 13 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,446 - WARNING - Couldn't click div.job-card-container--clickable for job 14, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,447 - ERROR - Error processing job listing 14 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,448 - WARNING - Couldn't click div.job-card-container--clickable for job 15, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,448 - ERROR - Error processing job listing 15 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,449 - WARNING - Couldn't click div.job-card-container--clickable for job 16, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,450 - ERROR - Error processing job listing 16 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,451 - WARNING - Couldn't click div.job-card-container--clickable for job 17, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,451 - ERROR - Error processing job listing 17 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,452 - WARNING - Couldn't click div.job-card-container--clickable for job 18, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,453 - ERROR - Error processing job listing 18 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,453 - WARNING - Couldn't click div.job-card-container--clickable for job 19, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,454 - ERROR - Error processing job listing 19 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,455 - WARNING - Couldn't click div.job-card-container--clickable for job 20, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,455 - ERROR - Error processing job listing 20 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,456 - WARNING - Couldn't click div.job-card-container--clickable for job 21, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,458 - ERROR - Error processing job listing 21 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,459 - WARNING - Couldn't click div.job-card-container--clickable for job 22, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,460 - ERROR - Error processing job listing 22 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,462 - WARNING - Couldn't click div.job-card-container--clickable for job 23, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,463 - ERROR - Error processing job listing 23 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,463 - WARNING - Couldn't click div.job-card-container--clickable for job 24, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,464 - ERROR - Error processing job listing 24 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,464 - WARNING - Couldn't click div.job-card-container--clickable for job 25, trying to click li: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,465 - ERROR - Error processing job listing 25 on page 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,465 - ERROR - Error clicking page button: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,466 - ERROR - Error during element scrolling: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 09:39:20,466 - ERROR - Error processing page 2: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000103036a80 chromedriver + 4385408
+1   chromedriver                        0x000000010302f38c chromedriver + 4354956
+2   chromedriver                        0x0000000102c4cb0c chromedriver + 281356
+3   chromedriver                        0x0000000102c27af0 chromedriver + 129776
+4   chromedriver                        0x0000000102cb4314 chromedriver + 705300
+5   chromedriver                        0x0000000102cc7438 chromedriver + 783416
+6   chromedriver                        0x0000000102c83eec chromedriver + 507628
+7   chromedriver                        0x0000000102c848c4 chromedriver + 510148
+8   chromedriver                        0x0000000102ffe43c chromedriver + 4154428
+9   chromedriver                        0x0000000103002ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102fe3ff8 chromedriver + 4046840
+11  chromedriver                        0x000000010300378c chromedriver + 4175756
+12  chromedriver                        0x0000000102fd6fb8 chromedriver + 3993528
+13  chromedriver                        0x000000010302121c chromedriver + 4297244
+14  chromedriver                        0x0000000103021398 chromedriver + 4297624
+15  chromedriver                        0x000000010302ef84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x000000019cb202e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000019cb1b0fc thread_start + 8
+
+2024-07-12 14:56:54,871 - INFO - Loaded cookies from linkedin_cookies.pkl
+2024-07-12 14:56:58,481 - INFO - Successfully logged in using cookies
+2024-07-12 14:56:58,486 - INFO - Saved cookies to linkedin_cookies.pkl
+2024-07-12 14:57:02,505 - INFO - Searching for jobs with keyword: data analyst
+2024-07-12 14:57:02,590 - INFO - Search results loaded successfully for data analyst in Canada with 38 results
+2024-07-12 14:57:02,590 - INFO - Search results: data analyst in Canada, Total jobs: 38
+2024-07-12 14:57:05,622 - ERROR - Error during element scrolling: Message: stale element reference: stale element not found
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x000000010342aa80 chromedriver + 4385408
+1   chromedriver                        0x000000010342338c chromedriver + 4354956
+2   chromedriver                        0x0000000103040b0c chromedriver + 281356
+3   chromedriver                        0x000000010304e898 chromedriver + 338072
+4   chromedriver                        0x0000000103045d84 chromedriver + 302468
+5   chromedriver                        0x0000000103045d84 chromedriver + 302468
+6   chromedriver                        0x0000000103044678 chromedriver + 296568
+7   chromedriver                        0x00000001030470b0 chromedriver + 307376
+8   chromedriver                        0x00000001030bc690 chromedriver + 788112
+9   chromedriver                        0x00000001030bbd24 chromedriver + 785700
+10  chromedriver                        0x0000000103077eec chromedriver + 507628
+11  chromedriver                        0x00000001030788c4 chromedriver + 510148
+12  chromedriver                        0x00000001033f243c chromedriver + 4154428
+13  chromedriver                        0x00000001033f6ea0 chromedriver + 4173472
+14  chromedriver                        0x00000001033d7ff8 chromedriver + 4046840
+15  chromedriver                        0x00000001033f778c chromedriver + 4175756
+16  chromedriver                        0x00000001033cafb8 chromedriver + 3993528
+17  chromedriver                        0x000000010341521c chromedriver + 4297244
+18  chromedriver                        0x0000000103415398 chromedriver + 4297624
+19  chromedriver                        0x0000000103422f84 chromedriver + 4353924
+20  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 14:57:05,633 - ERROR - Error processing page 1: Message: no such element: Unable to locate element: {"method":"css selector","selector":"ul.scaffold-layout__list-container"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010342aa80 chromedriver + 4385408
+1   chromedriver                        0x000000010342338c chromedriver + 4354956
+2   chromedriver                        0x0000000103040b0c chromedriver + 281356
+3   chromedriver                        0x00000001030832f8 chromedriver + 553720
+4   chromedriver                        0x00000001030bbd24 chromedriver + 785700
+5   chromedriver                        0x0000000103077eec chromedriver + 507628
+6   chromedriver                        0x00000001030788c4 chromedriver + 510148
+7   chromedriver                        0x00000001033f243c chromedriver + 4154428
+8   chromedriver                        0x00000001033f6ea0 chromedriver + 4173472
+9   chromedriver                        0x00000001033d7ff8 chromedriver + 4046840
+10  chromedriver                        0x00000001033f778c chromedriver + 4175756
+11  chromedriver                        0x00000001033cafb8 chromedriver + 3993528
+12  chromedriver                        0x000000010341521c chromedriver + 4297244
+13  chromedriver                        0x0000000103415398 chromedriver + 4297624
+14  chromedriver                        0x0000000103422f84 chromedriver + 4353924
+15  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+16  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 14:57:10,439 - ERROR - Error clicking page button: 'NoneType' object has no attribute 'is_displayed'
+2024-07-12 14:57:10,440 - ERROR - Error during element scrolling: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x000000010342aa80 chromedriver + 4385408
+1   chromedriver                        0x000000010342338c chromedriver + 4354956
+2   chromedriver                        0x0000000103040b0c chromedriver + 281356
+3   chromedriver                        0x000000010301baf0 chromedriver + 129776
+4   chromedriver                        0x00000001030a8314 chromedriver + 705300
+5   chromedriver                        0x00000001030bb438 chromedriver + 783416
+6   chromedriver                        0x0000000103077eec chromedriver + 507628
+7   chromedriver                        0x00000001030788c4 chromedriver + 510148
+8   chromedriver                        0x00000001033f243c chromedriver + 4154428
+9   chromedriver                        0x00000001033f6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001033d7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001033f778c chromedriver + 4175756
+12  chromedriver                        0x00000001033cafb8 chromedriver + 3993528
+13  chromedriver                        0x000000010341521c chromedriver + 4297244
+14  chromedriver                        0x0000000103415398 chromedriver + 4297624
+15  chromedriver                        0x0000000103422f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 14:57:10,441 - ERROR - Error processing page 2: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x000000010342aa80 chromedriver + 4385408
+1   chromedriver                        0x000000010342338c chromedriver + 4354956
+2   chromedriver                        0x0000000103040b0c chromedriver + 281356
+3   chromedriver                        0x000000010301baf0 chromedriver + 129776
+4   chromedriver                        0x00000001030a8314 chromedriver + 705300
+5   chromedriver                        0x00000001030bb438 chromedriver + 783416
+6   chromedriver                        0x0000000103077eec chromedriver + 507628
+7   chromedriver                        0x00000001030788c4 chromedriver + 510148
+8   chromedriver                        0x00000001033f243c chromedriver + 4154428
+9   chromedriver                        0x00000001033f6ea0 chromedriver + 4173472
+10  chromedriver                        0x00000001033d7ff8 chromedriver + 4046840
+11  chromedriver                        0x00000001033f778c chromedriver + 4175756
+12  chromedriver                        0x00000001033cafb8 chromedriver + 3993528
+13  chromedriver                        0x000000010341521c chromedriver + 4297244
+14  chromedriver                        0x0000000103415398 chromedriver + 4297624
+15  chromedriver                        0x0000000103422f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 14:57:50,795 - INFO - Loaded cookies from linkedin_cookies.pkl
+2024-07-12 14:57:53,775 - INFO - Successfully logged in using cookies
+2024-07-12 14:57:53,780 - INFO - Saved cookies to linkedin_cookies.pkl
+2024-07-12 14:57:57,122 - INFO - Searching for jobs with keyword: data analyst
+2024-07-12 14:57:57,188 - INFO - Search results loaded successfully for data analyst in Canada with 38 results
+2024-07-12 14:57:57,189 - INFO - Search results: data analyst in Canada, Total jobs: 38
+2024-07-12 14:58:05,591 - INFO - Found 25 job listings on page 1
+2024-07-12 14:58:10,261 - INFO - Successfully scraped job 1: Junior Data Analyst
+2024-07-12 14:58:21,703 - INFO - Successfully scraped job 2: Analyste Données de base- FR
+2024-07-12 14:58:40,174 - INFO - Successfully scraped job 3: Statistical Science Associate Director (Principal level) / Senior Statistician – BioPharmaceuticals
+2024-07-12 14:58:54,346 - INFO - Successfully scraped job 4: Data Analyst
+2024-07-12 15:02:35,025 - ERROR - Error loading cookies: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000102d9aa80 chromedriver + 4385408
+1   chromedriver                        0x0000000102d9338c chromedriver + 4354956
+2   chromedriver                        0x00000001029b0b0c chromedriver + 281356
+3   chromedriver                        0x000000010298baf0 chromedriver + 129776
+4   chromedriver                        0x0000000102a18314 chromedriver + 705300
+5   chromedriver                        0x0000000102a2b438 chromedriver + 783416
+6   chromedriver                        0x00000001029e7eec chromedriver + 507628
+7   chromedriver                        0x00000001029e88c4 chromedriver + 510148
+8   chromedriver                        0x0000000102d6243c chromedriver + 4154428
+9   chromedriver                        0x0000000102d66ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102d47ff8 chromedriver + 4046840
+11  chromedriver                        0x0000000102d6778c chromedriver + 4175756
+12  chromedriver                        0x0000000102d3afb8 chromedriver + 3993528
+13  chromedriver                        0x0000000102d8521c chromedriver + 4297244
+14  chromedriver                        0x0000000102d85398 chromedriver + 4297624
+15  chromedriver                        0x0000000102d92f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 15:02:35,027 - ERROR - An error occurred during initial start: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000102d9aa80 chromedriver + 4385408
+1   chromedriver                        0x0000000102d9338c chromedriver + 4354956
+2   chromedriver                        0x00000001029b0b0c chromedriver + 281356
+3   chromedriver                        0x000000010298baf0 chromedriver + 129776
+4   chromedriver                        0x0000000102a18314 chromedriver + 705300
+5   chromedriver                        0x0000000102a2b438 chromedriver + 783416
+6   chromedriver                        0x00000001029e7eec chromedriver + 507628
+7   chromedriver                        0x00000001029e88c4 chromedriver + 510148
+8   chromedriver                        0x0000000102d6243c chromedriver + 4154428
+9   chromedriver                        0x0000000102d66ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102d47ff8 chromedriver + 4046840
+11  chromedriver                        0x0000000102d6778c chromedriver + 4175756
+12  chromedriver                        0x0000000102d3afb8 chromedriver + 3993528
+13  chromedriver                        0x0000000102d8521c chromedriver + 4297244
+14  chromedriver                        0x0000000102d85398 chromedriver + 4297624
+15  chromedriver                        0x0000000102d92f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 15:02:35,030 - ERROR - Error during job search: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x0000000102d9aa80 chromedriver + 4385408
+1   chromedriver                        0x0000000102d9338c chromedriver + 4354956
+2   chromedriver                        0x00000001029b0b0c chromedriver + 281356
+3   chromedriver                        0x000000010298baf0 chromedriver + 129776
+4   chromedriver                        0x0000000102a18314 chromedriver + 705300
+5   chromedriver                        0x0000000102a2b438 chromedriver + 783416
+6   chromedriver                        0x00000001029e7eec chromedriver + 507628
+7   chromedriver                        0x00000001029e88c4 chromedriver + 510148
+8   chromedriver                        0x0000000102d6243c chromedriver + 4154428
+9   chromedriver                        0x0000000102d66ea0 chromedriver + 4173472
+10  chromedriver                        0x0000000102d47ff8 chromedriver + 4046840
+11  chromedriver                        0x0000000102d6778c chromedriver + 4175756
+12  chromedriver                        0x0000000102d3afb8 chromedriver + 3993528
+13  chromedriver                        0x0000000102d8521c chromedriver + 4297244
+14  chromedriver                        0x0000000102d85398 chromedriver + 4297624
+15  chromedriver                        0x0000000102d92f84 chromedriver + 4353924
+16  libsystem_pthread.dylib             0x00000001944a82e4 _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001944a30fc thread_start + 8
+
+2024-07-12 15:02:35,030 - ERROR - An error occurred in search_jobs_runner: cannot unpack non-iterable NoneType object
