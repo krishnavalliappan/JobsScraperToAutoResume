@@ -41,3 +41,41 @@
 
 # # Disconnect when done
 # dm.disconnect()
+
+# In main.py:
+from processData import ProcessData
+import asyncio
+from LinkedIn.linkedIn import LinkedIn
+from ResumeManager.resumeManager import ResumeManager
+import os
+import pandas as pd
+from dotenv import load_dotenv
+from notion_manager import NotionManager
+
+load_dotenv()
+
+async def main():
+    linkedin_email = os.environ.get('LINKEDIN_EMAIL')
+    linkedin_password = os.environ.get('LINKEDIN_PASSWORD')
+    database_id = "7585377689d14a70bce0e38935403a1b"
+    
+    if not linkedin_email or not linkedin_password:
+        raise ValueError("LinkedIn credentials not set in environment variables")
+
+    try:
+        linkedin = LinkedIn(linkedin_email, linkedin_password)
+        linkedin.search_jobs_runner("Data Analyst", time_filter=1)
+        data = linkedin.scraped_job_data
+        # data = pd.read_csv("job_application_pre_processing.csv")
+        process_data = ProcessData(data)
+        await process_data.analyze_job()
+        # create resumes and cover_letters
+        new_df = process_data.df_new
+        ResumeManager(new_df)
+        notion = NotionManager(database_id=database_id)
+        notion.one_way_sync(new_df)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    asyncio.run(main())

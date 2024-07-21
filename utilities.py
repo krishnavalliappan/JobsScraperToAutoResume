@@ -1,10 +1,12 @@
 from urllib.parse import urlencode, quote_plus
 from datetime import datetime, timedelta
 import re
+import pytz
 
 def calculate_posted_time(time_ago_string):
     try:
         current_time = datetime.now()
+        
         
         # Extract number and unit from the input string
         match = re.match(r'(\d+)\s+(\w+)\s+ago', time_ago_string)
@@ -37,8 +39,27 @@ def calculate_posted_time(time_ago_string):
         return posted_time
     
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print(f"An error occurred in days ago: {str(e)}")
         return datetime.now()
+
+def convert_to_iso_time(date):
+    # Your local time
+    local_time = datetime.strptime(date, "%Y-%m-%d %H:%M:%S.%f")
+
+    # Get your local timezone
+    local_tz = pytz.timezone('America/New_York')  # Replace with your actual timezone, e.g., 'America/New_York'
+
+    # Localize the datetime
+    local_time_with_tz = local_tz.localize(local_time)
+
+    # Convert to UTC
+    utc_time = local_time_with_tz.astimezone(pytz.UTC)
+
+    # Format in ISO 8601
+    iso_time = utc_time.isoformat()
+
+    print(iso_time)
+
 
 def generate_linkedin_job_search_url(keyword, sort_by="DD", time_filter=2, experience_level="2,3", distance=25, industry=None):
     # industry: LinkedIn uses a hierarchical system for industries.

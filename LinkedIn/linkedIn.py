@@ -54,6 +54,7 @@ class LinkedIn:
         finally:
             if len(self.scraped_job_data) > 0:
                 logging.info(f"Successfully scraped {len(self.scraped_job_data)} job listings")
+            self.linkedin.driver.quit()
             
 
     def _process_page(self, page):
@@ -77,6 +78,7 @@ class LinkedIn:
                     logging.warning(f"Error scrolling after processing job {i + 1}: {str(e)}") 
 
         except Exception as e:
+            print("error while processing page")
             logging.error(f"Error processing page {page + 1}: {str(e)}")
 
     def _process_job_listing(self, li, index):
