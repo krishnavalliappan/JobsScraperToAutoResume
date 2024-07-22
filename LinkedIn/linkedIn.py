@@ -9,7 +9,7 @@ import time
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, current_dir)
 
-from linkedInscrapper import LinkedInScraper
+from linkedin.linkedin_scrapper import LinkedInScraper
 
 
 # Set up logging

@@ -43,20 +43,20 @@
 # dm.disconnect()
 
 # In main.py:
-from processData import ProcessData
+from utils.data_processor import ProcessData
 import asyncio
-from LinkedIn.linkedIn import LinkedIn
-from ResumeManager.resumeManager import ResumeManager
+from linkedin.linkedIn import LinkedIn
+from resume.resume_manager import ResumeManager
 import os
 import pandas as pd
 from dotenv import load_dotenv
-from notion_manager import NotionManager
+from notion.notion_manager import NotionManager
 
 load_dotenv()
 
 async def main():
     linkedin_email = os.environ.get('LINKEDIN_EMAIL')
-    linkedin_password = os.environ.get('LINKEDIN_PASSWORD')
+    linkedin_password = "?cFjJMAa8$GHq$4g"
     database_id = "7585377689d14a70bce0e38935403a1b"
     
     if not linkedin_email or not linkedin_password:
