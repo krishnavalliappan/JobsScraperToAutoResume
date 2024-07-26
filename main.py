@@ -45,7 +45,7 @@
 # In main.py:
 from processData import ProcessData
 import asyncio
-from LinkedIn.linkedIn import LinkedIn
+from linkedin.linkedIn import LinkedIn
 from ResumeManager.resumeManager import ResumeManager
 import os
 import pandas as pd

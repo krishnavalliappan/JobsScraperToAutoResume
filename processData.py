@@ -55,11 +55,16 @@ class ProcessData():
         try:
             analyzer = JobAnalyzer(self.df_new, self.resume)
             df_new, df_update = await analyzer.process_jobs()
-            self.df_new = pd.concat([self.df_new, df_new], axis=1)
+            
+            # Merge new columns based on job_id
+            self.df_new = pd.merge(self.df_new, df_new, on='job_id', how='left')
+            
+            # Update existing columns
             self.df_new.update(df_update)
+            
             self.append_data_csv()
         except Exception as e:
-            print(f"An error occurred in pandas cancat: {str(e)}")
+            print(f"An error occurred in pandas operations: {str(e)}")
             
     def append_data_csv(self):
         with open('job_application.csv', 'a') as f:

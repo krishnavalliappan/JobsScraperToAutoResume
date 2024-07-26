@@ -55,7 +55,9 @@ class LinkedInScraper:
                 self.load_cookies()
                 self.driver.refresh()
                 
-                if "login" in self.driver.current_url:
+                time.sleep(5)
+                
+                if "feed" not in self.driver.current_url:
                     logging.info("Cookies expired, logging in again")
                     self.login_to_linkedin()
                 else:

@@ -12,6 +12,7 @@ from g4f.client import Client
 from g4f.cookies import set_cookies_dir, read_cookie_files
 import os
 import re
+import PyPDF2
 import pandas as pd
 from Utilities.proxies import ProxyRotator
 from g4f.Provider import You, Liaobots, ChatgptAi, Bing, RetryProvider
@@ -98,17 +99,20 @@ class JobAnalysisOutput(BaseModel):
     job_position_title: str = Field(description="Formatted job position title in English")
     company_name: str = Field(description="Formatted company name in English")
 
-def preprocess_job_analysis(result: Optional[JobAnalysisOutput]) -> Tuple[Dict[str, str], Dict[str, str]]:
+def preprocess_job_analysis(result: Tuple[str, Optional[JobAnalysisOutput]]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    job_id, result = result
     new_columns = {
-            "top_skills": None,
-            "job_category": None,
-            "why_this_company": None,
-            "why_me": None,
-        }
+        "job_id": job_id,
+        "top_skills": None,
+        "job_category": None,
+        "why_this_company": None,
+        "why_me": None,
+    }
     update_columns = {
-            "job_position_title": None,
-            "company_name": None
-        }
+        "job_id": job_id,
+        "job_position_title": None,
+        "company_name": None
+    }
     
     if result is None:
         return new_columns, update_columns
@@ -130,8 +134,8 @@ def preprocess_job_analysis(result: Optional[JobAnalysisOutput]) -> Tuple[Dict[s
             "job_position_title": result.job_position_title,
             "company_name": result.company_name
         }
-        
         return new_columns, update_columns
+    
     except AttributeError as e:
         print(f"AttributeError in preprocess_job_analysis: {e}")
         return new_columns, update_columns
@@ -219,7 +223,7 @@ homemade pizza recipe!'
             print(f"No JSON found in the text: {text}")
             return {}
 
-    async def analyze_job(self, job_description, resume, company_name, job_position_title, attempts=0):
+    async def analyze_job(self, job_description, resume, company_name, job_position_title, job_id, attempts=0):
         if attempts >= 3:
             print(f"Failed to analyze job after 3 attempts for {job_position_title} at {company_name}")
             return None
@@ -234,20 +238,21 @@ homemade pizza recipe!'
         result = await chain.ainvoke({"job_description": job_description, "resume": resume, "company_name": company_name, "job_position_title": job_position_title})
         
         try:
-            return JobAnalysisOutput(**result)
+            analysis_output = JobAnalysisOutput(**result)
+            return job_id, analysis_output
         except ValueError as e:
             print(f"Validation error (attempt {attempts + 1}): {e}")
             print(f"Raw result: {result}")
             # Recursive call with incremented attempts
-            return await self.analyze_job(job_description, resume, company_name, job_position_title, attempts + 1)
+            return await self.analyze_job(job_description, resume, company_name, job_position_title, job_id, attempts + 1)
 
 
     async def process_jobs(self) -> Tuple[pd.DataFrame, pd.DataFrame]:
         if self.df is None or self.resume_text is None:
             raise ValueError("DataFrame and resume text must be provided.")
 
-        tasks = [self.analyze_job(row['job_description'], self.resume_text, row['company_name'], row["job_position_title"])
-                for _, row in self.df.iterrows()]
+        tasks = [self.analyze_job(row['job_description'], self.resume_text, row['company_name'], row["job_position_title"], row["job_id"])
+            for _, row in self.df.iterrows()]
 
         results = []
         completed_tasks = 0
@@ -274,6 +279,10 @@ homemade pizza recipe!'
         df_new = pd.DataFrame(new_columns)
         df_update = pd.DataFrame(update_columns)
         
+        # Add job_id to both DataFrames
+        df_new['job_id'] = [result[0] for result in valid_results]
+        df_update['job_id'] = [result[0] for result in valid_results]
+        
         return df_new, df_update
 
 
@@ -287,10 +296,24 @@ homemade pizza recipe!'
 #                 text += page.extract_text()
 #         return text
     
-#     analyzer = JobAnalyzer(pd.read_csv("job_data.csv"), read_pdf_resume("resume.pdf")) 
-#     output_1, output_2 = await analyzer.process_jobs()
-#     output_1.to_csv("new_columns.csv", index=False)
-#     output_2.to_csv("update_columns.csv", index=False)
+#     df = pd.read_csv("job_application_pre_processing.csv")
+#     df = df.drop_duplicates(subset='job_id', keep='first')
+    
+#     # analyzer = JobAnalyzer(df, read_pdf_resume("resume.pdf")) 
+#     # df_new, df_update = await analyzer.process_jobs()
+    
+#     # df_new.to_csv("new_columns.csv", index=False)
+#     # df_update.to_csv("update_columns.csv", index=False)
+    
+#     df_new = pd.read_csv("new_columns.csv")
+#     df_update = pd.read_csv("update_columns.csv")
+    
+#     # Merge new columns
+#     df = pd.merge(df, df_new, on='job_id', how='left')
+#     # Update existing columns
+#     df.update(df_update)
+    
+#     df.to_csv("test_csv.csv", index=False)
 
 # if __name__ == "__main__":
 #     asyncio.run(main())
