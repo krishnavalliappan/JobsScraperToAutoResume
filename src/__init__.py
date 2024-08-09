@@ -3,7 +3,7 @@
 # You can leave this file empty if you don't need any initialization code
 
 # Optionally, you can import and expose specific modules or functions
-# from .scraper import LinkedInScraper
+from .scraper_linkedin import LinkedIn
 # from .processor import DataProcessor, GPTProcessor
 # from .document_generator import WordGenerator, PDFGenerator
 # from .notion_integration import NotionManager

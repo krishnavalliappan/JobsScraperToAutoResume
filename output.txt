@@ -1,18 +1,284 @@
-File: notion_manager.py
+File: datamanger.py
+==================================================
+import mysql.connector
+from mysql.connector import Error
+import os
+import sys
+
+# current_dir = os.path.dirname(os.path.abspath(__file__))
+# sys.path.insert(0, current_dir)
+
+class DataManager:
+    def __init__(self, host, user, password, database):
+        self.host = host
+        self.user = user
+        self.password = password
+        self.database = database
+        self.connection = None
+        self.cursor = None
+
+    def connect(self):
+        try:
+            # First, connect to MySQL server without specifying a database
+            self.connection = mysql.connector.connect(
+                host=self.host,
+                user=self.user,
+                password=self.password
+            )
+            
+            if self.connection.is_connected():
+                self.cursor = self.connection.cursor()
+                
+                # Check if the database exists
+                self.cursor.execute(f"SHOW DATABASES LIKE '{self.database}'")
+                result = self.cursor.fetchone()
+                
+                if not result:
+                    # Create the database if it doesn't exist
+                    self.cursor.execute(f"CREATE DATABASE {self.database}")
+                    print(f"Database '{self.database}' created successfully.")
+                
+                # Connect to the specific database
+                self.connection.database = self.database
+                print(f"Connected to database '{self.database}'.")
+        
+        except Error as e:
+            print(f"Error connecting to MySQL: {e}")
+
+    def disconnect(self):
+        if self.connection and self.connection.is_connected():
+            if self.cursor:
+                self.cursor.close()
+            self.connection.close()
+            print("MySQL connection closed.")
+
+    def execute_query(self, query):
+        try:
+            self.cursor.execute(query)
+            self.connection.commit()
+            print("Query executed successfully.")
+        except Error as e:
+            print(f"Error executing query: {e}")
+
+    # Add more methods for database operations as needed
+
+
+==================================================
+
+File: main.py
+==================================================
+# from g4f.client import Client
+# import os.path
+# from g4f.cookies import set_cookies_dir, read_cookie_files
+# from g4f.Provider import (Liaobots)
+# import g4f
+
+# import g4f.debug
+
+# g4f.debug.logging = True
+# cookies_dir = os.path.join(os.path.dirname(__file__), "har_and_cookies")
+# set_cookies_dir(cookies_dir)
+# read_cookie_files(cookies_dir)
+
+
+# client = Client(Liaobots)
+# response = client.chat.completions.create(
+#     model=g4f.models.gpt_4o,
+#     messages=[{"role": "user", "content": "Tell me about Coveo company for my interview"}],
+# )              
+# print(response.choices[0].message.content)
+
+# from LinkedIn.linkedIn import LinkedIn
+
+# linkedin = LinkedIn("krishnavalliappan02@gmail.com", "YE$35A!GJjn@AQ!3")
+# linkedin.search_jobs_runner("data analyst", time_filter=2)
+# from datamanger import DataManager
+
+# dm = DataManager("localhost", "root", "welcome123", "linkedin_data")
+
+# # Connect to the database (creates it if it doesn't exist)
+# dm.connect()
+
+# # Execute a sample query (e.g., create a table)
+# # dm.execute_query("""
+# #     CREATE TABLE IF NOT EXISTS users (
+# #         id INT AUTO_INCREMENT PRIMARY KEY,
+# #         name VARCHAR(255),
+# #         email VARCHAR(255)
+# #     )
+# # """)
+
+# # Disconnect when done
+# dm.disconnect()
+
+# In main.py:
+# from processData import ProcessData
+# import asyncio
+# from linkedin.linkedIn import LinkedIn
+# from ResumeManager.resumeManager import ResumeManager
+# import os
+# import pandas as pd
+# from dotenv import load_dotenv
+# from notion_manager import NotionManager
+
+# load_dotenv()
+
+# async def main():
+#     linkedin_email = os.environ.get('LINKEDIN_EMAIL')
+#     linkedin_password = os.environ.get('LINKEDIN_PASSWORD')
+#     database_id = "7585377689d14a70bce0e38935403a1b"
+    
+#     if not linkedin_email or not linkedin_password:
+#         raise ValueError("LinkedIn credentials not set in environment variables")
+
+#     try:
+#         linkedin = LinkedIn(linkedin_email, linkedin_password)
+#         linkedin.search_jobs_runner("Data Analyst", time_filter=1)
+#         data = linkedin.scraped_job_data
+#         # data = pd.read_csv("job_application_pre_processing.csv")
+#         process_data = ProcessData(data)
+#         await process_data.analyze_job()
+#         # create resumes and cover_letters
+#         new_df = process_data.df_new
+#         ResumeManager(new_df)
+#         notion = NotionManager(database_id=database_id)
+#         notion.one_way_sync(new_df)
+#     except Exception as e:
+#         print(f"An error occurred: {e}")
+
+# if __name__ == "__main__":
+#     asyncio.run(main())
+
+from src.scraper_linkedin import LinkedIn
+from src.processor import DataProcessor
+import logging
+import asyncio
+import pandas as pd
+from src.document_generator import ResumeManager
+from src.notion_integration import NotionManager
+from src.utilities import duration_to_seconds
+
+async def main():
+    logging.basicConfig(
+      filename='linkedin_search.log', 
+      level=logging.INFO,
+      format='%(asctime)s - %(levelname)s - %(message)s')
+    
+    # linkedin = LinkedIn()
+
+    # linkedin.search_jobs_runner("full stack developer", experience_level="2", time_filter="1 day")
+
+    # scraped_data = linkedin.get_scraped_data()
+    scraped_data = pd.read_csv("job_application_pre_processing.csv")
+    data_processor = DataProcessor(scraped_data)
+    await data_processor.analyze_jobs()
+    data = data_processor.get_processed_data()
+    ResumeManager(data)
+    NotionManager(data)
+    
+if __name__ == "__main__":
+  asyncio.run(main())
+
+==================================================
+
+File: src/__init__.py
+==================================================
+# src/__init__.py
+
+# You can leave this file empty if you don't need any initialization code
+
+# Optionally, you can import and expose specific modules or functions
+from .scraper_linkedin import LinkedIn
+# from .processor import DataProcessor, GPTProcessor
+# from .document_generator import WordGenerator, PDFGenerator
+# from .notion_integration import NotionManager
+
+# If you want to define a version for your package
+__version__ = "0.1.0"
+
+# You can also include any initialization code here if needed
+# For example, setting up logging for the entire package
+import logging
+
+logging.getLogger(__name__).addHandler(logging.NullHandler())
+
+
+==================================================
+
+File: src/config/__init__.py
+==================================================
+from .settings import *
+
+
+==================================================
+
+File: src/config/settings.py
 ==================================================
 import os
-from notion_client import Client
-import pandas as pd
 from dotenv import load_dotenv
-import requests
 
 # Load environment variables
 load_dotenv()
 
-# Get Notion API key from environment variables
-NOTION_API_KEY = os.getenv("NOTION_API_KEY")
+# LinkedIn credentials
+LINKEDIN_EMAIL = os.getenv("LINKEDIN_EMAIL")
+LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")
 
-notion_schema = {
+# Notion settings
+NOTION_API_KEY = os.getenv("NOTION_API_KEY")
+NOTION_DATABASE_ID = os.getenv("NOTION_DATABASE_ID")
+
+# File paths
+RESUME_PDF_PATH = os.path.join("templates", "resume.pdf")
+RESUME_TEMPLATES_DIR = os.path.join("templates")
+OUTPUT_RESUMES_DIR = os.path.join("output", "resumes")
+
+# LinkedIn scraper settings
+COOKIE_FILE = "cookies/linkedin_cookies.pkl"
+
+# Job search settings
+DEFAULT_SORT_BY = "DD"
+DEFAULT_TIME_FILTER = "1 day"  # in days
+DEFAULT_EXPERIENCE_LEVEL = "2,3"
+DEFAULT_DISTANCE = 25
+"""
+LinkedIn GeoID Configuration
+
+The `geo_id` parameter is used to filter job listings by geographic location in LinkedIn's job search.
+Default is set to Canada (geo_id: 101174742).
+
+To customize the geo_id for a different location:
+
+1. Open an incognito/private browsing window to avoid personalized results.
+2. Navigate to LinkedIn's job search page (https://www.linkedin.com/jobs/).
+3. In the location filter input, enter your desired region.
+4. Select the appropriate option from the autocomplete dialog.
+5. After the results load, examine the URL in the address bar.
+6. Locate the `geoId` parameter in the URL. For example:
+   https://www.linkedin.com/jobs/search?keywords=&location=Canada&geoId=101174742&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0
+
+In this example, the geo_id for Canada is 101174742.
+
+Note: LinkedIn may update their URL structure or geo_id values over time.
+Always verify the current format and values before use.
+"""
+DEFAULT_GEO_ID = "101174742"
+DEFAULT_JOB_FUNCTION = "it%2Canls"
+DEFAULT_INDUSTRY = None  
+
+# Logging settings
+LOG_FILE = os.path.join("logs", "app.log")
+LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
+
+# GPT settings
+GPT_MODEL_PRIMARY = "gpt-4o-mini"
+GPT_MODEL_SECONDARY = "gpt-3.5-turbo"
+
+# Proxy settings
+PROXY_URL = "https://free-proxy-list.net/"
+
+# Notion schema
+NOTION_SCHEMA = {
     "job_position_title": {
         "type": "title",
         "notion_prop_name": "Job Role"
@@ -83,522 +349,134 @@ notion_schema = {
     }
 }
 
-class NotionManager:
-    def __init__(self, database_id):
-        self.notion = Client(auth=NOTION_API_KEY)
-        self.database_id = database_id
-
-    def create_property(self, property_name, property_type):
-        """Create a new property in the Notion database"""
-        try:
-            self.notion.databases.update(
-                database_id=self.database_id,
-                properties={
-                    property_name: {
-                        "type": property_type,
-                        property_type: {}
-                    }
-                }
-            )
-            print(f"Property '{property_name}' of type '{property_type}' created successfully.")
-        except Exception as e:
-            print(f"Error creating property: {e}")
-
-    def sync_to_notion(self, df):
-        """Sync DataFrame to Notion database"""
-        for _, row in df.iterrows():
-            properties = {}
-            for col, prop_data in notion_schema.items():
-                notion_prop_name = prop_data["notion_prop_name"]
-                notion_type = prop_data["type"]
-                value = row[col]
-
-                if notion_type == "title":
-                    properties[notion_prop_name] = {"title": [{"text": {"content": str(value)}}]}
-                elif notion_type == "rich_text":
-                    properties[notion_prop_name] = {"rich_text": [{"text": {"content": str(value)}}]}
-                elif notion_type == "number":
-                    properties[notion_prop_name] = {"number": float(value) if pd.notna(value) else None}
-                elif notion_type == "select":
-                    properties[notion_prop_name] = {"select": {"name": str(value).replace(",", "-")}}
-                elif notion_type == "multi_select":
-                    properties[notion_prop_name] = {"multi_select": [{"name": item.strip()} for item in str(value).split(',')]}
-                elif notion_type == "date":
-                    properties[notion_prop_name] = {"date": {"start": str(value), "time_zone": "America/Montreal"}}
-                elif notion_type == "checkbox":
-                    properties[notion_prop_name] = {"checkbox": bool(value)}
-                elif notion_type == "url":
-                    properties[notion_prop_name] = {"url": str(value)}
-
-            try:
-                page = self.notion.pages.create(
-                    parent={"database_id": self.database_id},
-                    properties=properties,
-                    icon={"type": "external", "external": {"url": row['company_logo']}}
-                )
-                self.add_detailed_content(page["id"], row)
-                print(f"Row added successfully: {row['job_id']}")
-            except Exception as e:
-                print(f"Error adding row: {row['job_id']}. Error: {e}")
-
-    def add_detailed_content(self, page_id, row):
-        """Add job_description, why_me, and why_this_company as blocks inside the page"""
-        
-        def create_paragraph_blocks(content):
-            blocks = []
-            while len(content) > 0:
-                block_content = content[:2000]
-                blocks.append({
-                    "object": "block",
-                    "type": "paragraph",
-                    "paragraph": {
-                        "rich_text": [{"type": "text", "text": {"content": block_content}}]
-                    }
-                })
-                content = content[2000:]
-            return blocks
-
-        blocks = [
-            {
-                "object": "block",
-                "type": "heading_2",
-                "heading_2": {
-                    "rich_text": [{"type": "text", "text": {"content": "Job Description"}}]
-                }
-            },
-        ]
-        blocks.extend(create_paragraph_blocks(row['job_description']))
-
-        blocks.append({
-            "object": "block",
-            "type": "heading_2",
-            "heading_2": {
-                "rich_text": [{"type": "text", "text": {"content": "Why This Company"}}]
-            }
-        })
-        blocks.extend(create_paragraph_blocks(row['why_this_company']))
-
-        blocks.append({
-            "object": "block",
-            "type": "heading_2",
-            "heading_2": {
-                "rich_text": [{"type": "text", "text": {"content": "Why Me"}}]
-            }
-        })
-        blocks.extend(create_paragraph_blocks(row['why_me']))
-
-        self.notion.blocks.children.append(page_id, children=blocks)
-
-    def one_way_sync(self, df):
-        """Perform one-way sync from DataFrame to Notion"""
-        # Create properties if they don't exist
-        # for prop_name, prop_data in notion_schema.items():
-        #     self.create_property(prop_data["notion_prop_name"], prop_data["type"])
-
-        # Sync data to Notion
-        self.sync_to_notion(df)
-
-# def main():
-#     # Initialize NotionManager with your database ID
-#     database_id = "7585377689d14a70bce0e38935403a1b"
-#     notion_manager = NotionManager(database_id)
-
-#     # # Read CSV and convert to DataFrame
-#     df = pd.read_csv("job_data.csv")
-
-#     # # Perform one-way sync
-#     notion_manager.one_way_sync(df)
-
-# if __name__ == "__main__":
-#     main()
+# Add any other configuration variables here
 
 
 ==================================================
 
-File: datamanger.py
+File: src/processor/data_processor.py
 ==================================================
-import mysql.connector
-from mysql.connector import Error
-import os
-import sys
-
-# current_dir = os.path.dirname(os.path.abspath(__file__))
-# sys.path.insert(0, current_dir)
-
-class DataManager:
-    def __init__(self, host, user, password, database):
-        self.host = host
-        self.user = user
-        self.password = password
-        self.database = database
-        self.connection = None
-        self.cursor = None
-
-    def connect(self):
-        try:
-            # First, connect to MySQL server without specifying a database
-            self.connection = mysql.connector.connect(
-                host=self.host,
-                user=self.user,
-                password=self.password
-            )
-            
-            if self.connection.is_connected():
-                self.cursor = self.connection.cursor()
-                
-                # Check if the database exists
-                self.cursor.execute(f"SHOW DATABASES LIKE '{self.database}'")
-                result = self.cursor.fetchone()
-                
-                if not result:
-                    # Create the database if it doesn't exist
-                    self.cursor.execute(f"CREATE DATABASE {self.database}")
-                    print(f"Database '{self.database}' created successfully.")
-                
-                # Connect to the specific database
-                self.connection.database = self.database
-                print(f"Connected to database '{self.database}'.")
-        
-        except Error as e:
-            print(f"Error connecting to MySQL: {e}")
-
-    def disconnect(self):
-        if self.connection and self.connection.is_connected():
-            if self.cursor:
-                self.cursor.close()
-            self.connection.close()
-            print("MySQL connection closed.")
-
-    def execute_query(self, query):
-        try:
-            self.cursor.execute(query)
-            self.connection.commit()
-            print("Query executed successfully.")
-        except Error as e:
-            print(f"Error executing query: {e}")
-
-    # Add more methods for database operations as needed
-
-
-==================================================
-
-File: processData.py
-==================================================
-from operator import le
-from os import read
 import pandas as pd
-from utilities import calculate_posted_time
-from gpt import JobAnalyzer
 import PyPDF2
+from typing import List, Dict, Any
+from src.utilities import calculate_posted_time
+from src.processor.gpt_processor import JobAnalyzer
+from src.config import RESUME_PDF_PATH
 
-# Class to process data
+class DataProcessor:
+    def __init__(self, data: List[Dict[str, Any]], resume_path: str = RESUME_PDF_PATH):
+        self.df_new = self._create_df(data)
+        self.resume = self._read_pdf_resume(resume_path)
+        # self._preprocess_data()
 
-class ProcessData():
-    
-    def __init__(self, data):
-        self.df_new = self.create_df(data)
-        self.resume = self.read_pdf_resume("resume.pdf")
-        print(len(self.df_new))
-        self.remove_duplicates(self.df_new)
-        print(len(self.df_new))
-        self.add_posted_date(self.df_new)
-        self.compare_df_csv()
-        self.df_new.to_csv("job_application_pre_processing.csv", index=False)
-        
-    def compare_df_csv(self):
-        old_df = pd.read_csv("job_application.csv")
-        # Get the set of job_ids from old_df
-        existing_job_ids = set(old_df['job_id'])
-
-        #Remove rows from self.new_df where job_id is in existing_job_ids
-        self.df_new = self.df_new[~self.df_new['job_id'].isin(existing_job_ids)]
-    
-    def create_df(self, data):
+    def _create_df(self, data: List[Dict[str, Any]]) -> pd.DataFrame:
         return pd.DataFrame(data)
-    
-    def remove_duplicates(self, df):
-        self.df_new = df.drop_duplicates(subset=['job_id'], keep='first')
-        self.df_new = self.custom_drop_duplicates(df, 'apply_link')
-    
-    def custom_drop_duplicates(self, df, column):
-    # Keep track of seen non-empty values
+
+    def _preprocess_data(self) -> None:
+        self._remove_duplicates()
+        self._add_posted_date()
+        self._compare_with_existing_data()
+        self._save_preprocessed_data()
+
+    def _remove_duplicates(self) -> None:
+        self.df_new = self.df_new.drop_duplicates(subset=['job_id'], keep='first')
+        self.df_new = self._custom_drop_duplicates('apply_link')
+
+    def _custom_drop_duplicates(self, column: str) -> pd.DataFrame:
         seen = set()
-    
-        def keep(value):
-            if value == "":
-                return True
-            if value not in seen:
-                seen.add(value)
-                return True
-            return False
-    
-        return df[df[column].apply(keep)]
-    
-    def add_posted_date(self, df):
-        df['posted_date'] = df['days_ago'].apply(lambda x: calculate_posted_time(x))
-    
-    async def analyze_job(self):
+        return self.df_new[self.df_new[column].apply(lambda x: x == "" or (x not in seen and not seen.add(x)))]
+
+    def _add_posted_date(self) -> None:
+        self.df_new['posted_date'] = self.df_new['days_ago'].apply(calculate_posted_time)
+
+    def _compare_with_existing_data(self) -> None:
+        try:
+            old_df = pd.read_csv("job_application.csv")
+            existing_job_ids = set(old_df['job_id'])
+            self.df_new = self.df_new[~self.df_new['job_id'].isin(existing_job_ids)]
+        except FileNotFoundError:
+            print("No existing job_application.csv found. Processing all data as new.")
+
+    def _save_preprocessed_data(self) -> None:
+        self.df_new.to_csv("job_application_pre_processing.csv", index=False)
+
+    async def analyze_jobs(self) -> None:
         try:
             analyzer = JobAnalyzer(self.df_new, self.resume)
             df_new, df_update = await analyzer.process_jobs()
             
-            # Merge new columns based on job_id
             self.df_new = pd.merge(self.df_new, df_new, on='job_id', how='left')
-            
-            # Update existing columns
             self.df_new.update(df_update)
             
-            self.append_data_csv()
+            self._append_data_to_csv()
         except Exception as e:
-            print(f"An error occurred in pandas operations: {str(e)}")
-            
-    def append_data_csv(self):
-        with open('job_application.csv', 'a') as f:
-            f.write('\n')
-        # Now append the new data
-        self.df_new.to_csv('job_application.csv', mode='a', header=False, index=False)
-       
+            print(f"An error occurred during job analysis: {str(e)}")
+
+    def _append_data_to_csv(self) -> None:
+        try:
+            with open('job_application.csv', 'a') as f:
+                f.write('\n')
+            self.df_new.to_csv('job_application.csv', mode='a', header=False, index=False)
+        except Exception as e:
+            print(f"Error appending data to CSV: {str(e)}")
+
     @staticmethod
-    def read_pdf_resume(file_path):
-        with open(file_path, 'rb') as file:
-            reader = PyPDF2.PdfReader(file)
-            text = ""
-            for page in reader.pages:
-                text += page.extract_text()
-        return text
+    def _read_pdf_resume(file_path: str) -> str:
+        try:
+            with open(file_path, 'rb') as file:
+                reader = PyPDF2.PdfReader(file)
+                return " ".join(page.extract_text() for page in reader.pages)
+        except Exception as e:
+            print(f"Error reading PDF resume: {str(e)}")
+            return ""
 
-==================================================
-
-File: utilities.py
-==================================================
-from urllib.parse import urlencode, quote_plus
-from datetime import datetime, timedelta
-import re
-import pytz
-
-def calculate_posted_time(time_ago_string):
-    try:
-        current_time = datetime.now()
-        
-        
-        # Extract number and unit from the input string
-        match = re.match(r'(\d+)\s+(\w+)\s+ago', time_ago_string)
-        if not match:
-            raise ValueError("Invalid input format")
-        
-        number, unit = int(match.group(1)), match.group(2).lower()
-        
-        # Define time units
-        units = {
-            'second': timedelta(seconds=1),
-            'minute': timedelta(minutes=1),
-            'hour': timedelta(hours=1),
-            'day': timedelta(days=1),
-            'week': timedelta(weeks=1),
-            'month': timedelta(days=30),  # Approximation
-            'year': timedelta(days=365)  # Approximation
-        }
-        
-        # Handle plural forms
-        if unit.endswith('s'):
-            unit = unit[:-1]
-        
-        if unit not in units:
-            raise ValueError("Invalid time unit")
-        
-        # Calculate the posted time
-        posted_time = current_time - (units[unit] * number)
-        
-        return posted_time
-    
-    except Exception as e:
-        print(f"An error occurred in days ago: {str(e)}")
-        return datetime.now()
-
-def convert_to_iso_time(date):
-    # Your local time
-    local_time = datetime.strptime(date, "%Y-%m-%d %H:%M:%S.%f")
-
-    # Get your local timezone
-    local_tz = pytz.timezone('America/New_York')  # Replace with your actual timezone, e.g., 'America/New_York'
-
-    # Localize the datetime
-    local_time_with_tz = local_tz.localize(local_time)
-
-    # Convert to UTC
-    utc_time = local_time_with_tz.astimezone(pytz.UTC)
-
-    # Format in ISO 8601
-    iso_time = utc_time.isoformat()
-
-    print(iso_time)
-
-
-def generate_linkedin_job_search_url(keyword, sort_by="DD", time_filter=2, experience_level="2,3", distance=25, industry=None):
-    # industry: LinkedIn uses a hierarchical system for industries.
-    # Examples include "4" (Computer Software), "6" (Internet),
-    # "51" (Information Technology and Services)
-    # Refer to LinkedIn's current industry taxonomy for a complete list
-
-    # sortBy: Options include:
-    # "R" (Most relevant), "DD" (Most recent), "PA" (Most viewed)
-
-    # time_filter: Options include:
-    # defualts to last 2 days, you can give how many days back you want to search
-
-    # experience_level: Options include:
-    # "1" (Internship), "2" (Entry level), "3" (Associate),
-    # "4" (Mid-Senior level), "5" (Director), "6" (Executive)
-    # Use comma-separated values for multiple levels, e.g., "2,3"
-
-    # distance: Numeric value representing the search radius in miles or kilometers
-    
-    time_filter = "r" + str(time_filter*86400)  # Convert days to seconds
-    
-    base_url = "https://www.linkedin.com/jobs/search/?"
-    
-    params = {
-        "keywords": keyword,
-        "f_F": "it%2Canls",
-        "f_I": industry,
-        "sortBy": sort_by,
-        "f_TPR": time_filter,
-        "f_E": experience_level,
-        "distance": distance,
-        "geoId": "101174742",  # You may want to make this parameter customizable
-        "origin": "JOB_SEARCH_PAGE_JOB_FILTER",
-        "refresh": "false",
-        "spellCorrectionEnabled": "true"
-    }
-    
-    # Remove any None values from the params
-    params = {k: v for k, v in params.items() if v is not None}
-    
-    # Encode the parameters
-    encoded_params = urlencode(params, quote_via=quote_plus)
-    
-    # Combine the base URL with the encoded parameters
-    full_url = base_url + encoded_params
-    
-    return full_url
+    def get_processed_data(self) -> pd.DataFrame:
+        return self.df_new
 
 
 ==================================================
 
-File: main.py
+File: src/processor/__init__.py
 ==================================================
-# from g4f.client import Client
-# import os.path
-# from g4f.cookies import set_cookies_dir, read_cookie_files
-# from g4f.Provider import (Liaobots)
-# import g4f
-
-# import g4f.debug
-
-# g4f.debug.logging = True
-# cookies_dir = os.path.join(os.path.dirname(__file__), "har_and_cookies")
-# set_cookies_dir(cookies_dir)
-# read_cookie_files(cookies_dir)
-
-
-# client = Client(Liaobots)
-# response = client.chat.completions.create(
-#     model=g4f.models.gpt_4o,
-#     messages=[{"role": "user", "content": "Tell me about Coveo company for my interview"}],
-# )              
-# print(response.choices[0].message.content)
-
-# from LinkedIn.linkedIn import LinkedIn
-
-# linkedin = LinkedIn("krishnavalliappan02@gmail.com", "YE$35A!GJjn@AQ!3")
-# linkedin.search_jobs_runner("data analyst", time_filter=2)
-# from datamanger import DataManager
-
-# dm = DataManager("localhost", "root", "welcome123", "linkedin_data")
-
-# # Connect to the database (creates it if it doesn't exist)
-# dm.connect()
-
-# # Execute a sample query (e.g., create a table)
-# # dm.execute_query("""
-# #     CREATE TABLE IF NOT EXISTS users (
-# #         id INT AUTO_INCREMENT PRIMARY KEY,
-# #         name VARCHAR(255),
-# #         email VARCHAR(255)
-# #     )
-# # """)
-
-# # Disconnect when done
-# dm.disconnect()
-
-# In main.py:
-from processData import ProcessData
-import asyncio
-from linkedin.linkedIn import LinkedIn
-from ResumeManager.resumeManager import ResumeManager
-import os
-import pandas as pd
-from dotenv import load_dotenv
-from notion_manager import NotionManager
-
-load_dotenv()
-
-async def main():
-    linkedin_email = os.environ.get('LINKEDIN_EMAIL')
-    linkedin_password = os.environ.get('LINKEDIN_PASSWORD')
-    database_id = "7585377689d14a70bce0e38935403a1b"
-    
-    if not linkedin_email or not linkedin_password:
-        raise ValueError("LinkedIn credentials not set in environment variables")
-
-    try:
-        linkedin = LinkedIn(linkedin_email, linkedin_password)
-        linkedin.search_jobs_runner("Data Analyst", time_filter=1)
-        data = linkedin.scraped_job_data
-        # data = pd.read_csv("job_application_pre_processing.csv")
-        process_data = ProcessData(data)
-        await process_data.analyze_job()
-        # create resumes and cover_letters
-        new_df = process_data.df_new
-        ResumeManager(new_df)
-        notion = NotionManager(database_id=database_id)
-        notion.one_way_sync(new_df)
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-if __name__ == "__main__":
-    asyncio.run(main())
+from .data_processor import DataProcessor
+from .gpt_processor import JobAnalyzer
 
 ==================================================
 
-File: gpt.py
+File: src/processor/gpt_processor.py
 ==================================================
+from http import client
 import json
 import asyncio
 from enum import Enum
 from typing import List, Optional, Dict, Tuple, Any
-from weakref import proxy
 from pydantic import BaseModel, Field
 from langchain.llms.base import LLM
 import g4f
 from langchain.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from g4f.client import Client
-from g4f.cookies import set_cookies_dir, read_cookie_files
 import os
 import re
-import PyPDF2
 import pandas as pd
-from Utilities.proxies import ProxyRotator
-from g4f.Provider import You, Liaobots, ChatgptAi, Bing, RetryProvider
+from src.utilities.proxies import ProxyRotator
+from src.config import GPT_MODEL_PRIMARY, GPT_MODEL_SECONDARY 
 
-proxy_rotator = ProxyRotator()
+class JobCategory(str, Enum):
+    DATA = "data analyst role"
+    BUSINESS = "business analyst role"
+    WEB = "SDE role"
 
-g4f.debug.logging = True
-cookies_dir = os.path.join(os.path.dirname(__file__), "har_and_cookies")
-set_cookies_dir(cookies_dir)
-read_cookie_files(cookies_dir)
+class JobAnalysisOutput(BaseModel):
+    skills_in_priority_order: List[str] = Field(description="Top 3 technical tools and tech stack mentioned in job description which I know as per my resume")
+    job_category: JobCategory = Field(description="Categorization of the job role")
+    why_this_company: str = Field(description="Personalized 'Why This Company' paragraph")
+    why_me: str = Field(description="Personalized 'Why Me' paragraph")
+    job_position_title: str = Field(description="Formatted job position title in English")
+    company_name: str = Field(description="Formatted company name in English")
+    location: str = Field(description="Location of company who posted job post")
 
+# proxy_rotator = ProxyRotator()
 
 class EducationalLLM(LLM):
     @property
@@ -609,118 +487,50 @@ class EducationalLLM(LLM):
         max_retries = 2
         for attempt in range(max_retries):
             try:
-                client = Client(proxies=proxy_rotator.get_proxy())
-                response = client.chat.completions.create(
-                    model="gpt-4o",
-                    messages=[{"role": "user", "content": prompt}],
-                )
-                out = response.choices[0].message.content
-                if stop:
-                    stop_indexes = (out.find(s) for s in stop if s in out)
-                    min_stop = min(stop_indexes, default=-1)
-                    if min_stop > -1:
-                        out = out[:min_stop]
-                print("with proxy success")
-                return out
+                return self._attempt_call(prompt, stop)
             except Exception as e:
-                print(f"Attempt {attempt + 1} failed with proxy: {str(e)}")
-                proxy_rotator.remove_current_proxy()
-                if not proxy_rotator.proxies:
-                    proxy_rotator.refresh_proxies()                  
-        # If all proxy attempts fail, try without a proxy
-        try:
-            print("Attempting to connect without a proxy...")
-            client = Client()
-            response = client.chat.completions.create(
-                model="gpt-4o",
-                messages=[{"role": "user", "content": prompt}],
-            )
-            out = response.choices[0].message.content
-            if stop:
-                stop_indexes = (out.find(s) for s in stop if s in out)
-                min_stop = min(stop_indexes, default=-1)
-                if min_stop > -1:
-                    out = out[:min_stop]
-            print("without proxy success")
-            return out
-        except Exception as e:
-            print("Attempting to connect without a proxy...")
-            client = Client()
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": prompt}],
-            )
-            out = response.choices[0].message.content
-            if stop:
-                stop_indexes = (out.find(s) for s in stop if s in out)
-                min_stop = min(stop_indexes, default=-1)
-                if min_stop > -1:
-                    out = out[:min_stop]
-            print("without proxy success using gpt-3.5-turbo")
-            return out
-            # raise Exception(f"Failed to get a response after multiple attempts with proxies and without proxy: {str(e)}")
+                self._handle_call_exception(e, attempt)
+        return self._fallback_call(prompt, stop)
 
+    def _attempt_call(self, prompt: str, stop: Optional[List[str]]) -> str:
+        # client = Client(proxies=proxy_rotator.get_proxy())
+        client = Client()
+        response = client.chat.completions.create(
+            model=GPT_MODEL_PRIMARY,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        out = response.choices[0].message.content
+        return self._process_output(out, stop)
 
-class JobCategory(str, Enum):
-    DATA = "data role"
-    BUSINESS = "business role"
-    IT = "IT role"
+    def _handle_call_exception(self, e: Exception, attempt: int):
+        print(f"Attempt {attempt + 1} failed with proxy: {str(e)}")
+        # proxy_rotator.remove_current_proxy()
+        # if not proxy_rotator.proxies:
+            # proxy_rotator.refresh_proxies()
 
-class JobAnalysisOutput(BaseModel):
-    skills_in_priority_order: List[str] = Field(description="Top 3 technical tool and tech stack mentioned in job description which is I know as per my resume")
-    job_category: JobCategory = Field(description="Categorization of the job role")
-    why_this_company: str = Field(description="Personalized 'Why This Company' paragraph")
-    why_me: str = Field(description="Personalized 'Why Me' paragraph")
-    job_position_title: str = Field(description="Formatted job position title in English")
-    company_name: str = Field(description="Formatted company name in English")
+    def _fallback_call(self, prompt: str, stop: Optional[List[str]]) -> str:
+        print("Attempting to connect without a proxy...")
+        client = Client()
+        response = client.chat.completions.create(
+            model=GPT_MODEL_SECONDARY,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        out = response.choices[0].message.content
+        return self._process_output(out, stop)
 
-def preprocess_job_analysis(result: Tuple[str, Optional[JobAnalysisOutput]]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
-    job_id, result = result
-    new_columns = {
-        "job_id": job_id,
-        "top_skills": None,
-        "job_category": None,
-        "why_this_company": None,
-        "why_me": None,
-    }
-    update_columns = {
-        "job_id": job_id,
-        "job_position_title": None,
-        "company_name": None
-    }
-    
-    if result is None:
-        return new_columns, update_columns
-    
-    try:
-        skills = result.skills_in_priority_order[:3]
-        if "Python" not in skills and "Python" in result.skills_in_priority_order:
-            skills = skills[:2] + ["Python"]
-        skills_str = ", ".join(skills[:-1]) + ", and " + skills[-1] if len(skills) > 1 else skills[0]
-        
-        new_columns = {
-            "top_skills": skills_str,
-            "job_category": result.job_category.value,
-            "why_this_company": result.why_this_company,
-            "why_me": result.why_me,
-        }
-        
-        update_columns = {
-            "job_position_title": result.job_position_title,
-            "company_name": result.company_name
-        }
-        return new_columns, update_columns
-    
-    except AttributeError as e:
-        print(f"AttributeError in preprocess_job_analysis: {e}")
-        return new_columns, update_columns
+    def _process_output(self, out: str, stop: Optional[List[str]]) -> str:
+        if stop:
+            stop_indexes = (out.find(s) for s in stop if s in out)
+            min_stop = min(stop_indexes, default=-1)
+            if min_stop > -1:
+                out = out[:min_stop]
+        return out
 
 class JobAnalyzer:
     def __init__(self, df: Optional[pd.DataFrame] = None, resume_text: Optional[str] = None):
         self.llm = EducationalLLM()
         self.df = df
         self.resume_text = resume_text
-        proxy_rotator.get_proxy()
 
     def _get_prompt(self) -> PromptTemplate:
         template = """
@@ -736,14 +546,16 @@ class JobAnalyzer:
         
         Job Position Title: {job_position_title}
         
+        location: {location}
 
         Please provide the following information:
         1. List the top 3 technical tools and the tech stack that are mentioned in the job description, which I'm familiar with as per my given resume. Include Python by default, listed in priority order.
-        2. Categorization of the job role: data role, business role, or IT role
+        2. Categorization of the job role: data analyst role, business analyst role, or SDE role
         3. A personalized 'Why This Company' paragraph (see instructions below)
         4. A personalized 'Why Me' paragraph (see instructions below)
         5. A formatted job position title in English, remove any unwanted characters which can't be allowed in directory creation and ensuring it's professional which I can use it in my resume. Make it short if its too long and a typical one.
         6. A formatted company name in English, removing any unwanted characters which can't be allowed in directory or file creation. If the company name is only in French, leave it as is.
+        7. Formatted location of compnay like this "City, Country"
 
         Instructions for 'Why This Company':
         Generate a paragraph that includes the following elements: Do web search and know about company.
@@ -752,13 +564,13 @@ class JobAnalyzer:
         • A mention of the company's reputation and culture.
         • How the company's direction and growth opportunities align with the candidate's career aspirations.
         • Why the candidate is excited about the company.
-        example: 'Affirm’s innovative approach to consumer finance is a major factor that draws me to this role. Affirm’s
-commitment to transparency and creating consumer-friendly financial products aligns perfectly with my
-values and career goals. I am particularly impressed by Affirm’s dedication to eliminating hidden fees and
-providing clear, upfront information to consumers, which resonates with my passion for ethical financial
-practices. The opportunity to work at a company that leverages cutting-edge technology to optimize
-portfolio economics and consumer growth is incredibly exciting to me. I am eager to contribute to Affirm’s
-mission of delivering honest financial products that improve lives.'
+        example: 'Affirm's innovative approach to consumer finance is a major factor that draws me to this role. Affirm's
+        commitment to transparency and creating consumer-friendly financial products aligns perfectly with my
+        values and career goals. I am particularly impressed by Affirm's dedication to eliminating hidden fees and
+        providing clear, upfront information to consumers, which resonates with my passion for ethical financial
+        practices. The opportunity to work at a company that leverages cutting-edge technology to optimize
+        portfolio economics and consumer growth is incredibly exciting to me. I am eager to contribute to Affirm's
+        mission of delivering honest financial products that improve lives.'
         length: follow the length of the example provided.
 
         Instructions for 'Why Me':
@@ -769,24 +581,23 @@ mission of delivering honest financial products that improve lives.'
         • The candidate's passion for the industry or role.
         • A brief, professional mention of hoping to master pizza-making before the interview call.
         example: 'With over three years of experience as a Data Analyst, I bring strong analytical skills and proficiency in
-SQL, Python, and VBA, essential for the Quantitative Analyst role at Affirm. My achievements include
-boosting sales projections by 15% with predictive models and enhancing system reliability through
-automated monitoring. My collaborative and problem-solving abilities make me a great fit for this role. I
-am confident my technical expertise and passion for fintech innovation will significantly contribute to
-Affirm’s success. I look forward to discussing how I can add value, hopefully before perfecting my
-homemade pizza recipe!'
+        SQL, Python, and VBA, essential for the Quantitative Analyst role at Affirm. My achievements include
+        boosting sales projections by 15% with predictive models and enhancing system reliability through
+        automated monitoring. My collaborative and problem-solving abilities make me a great fit for this role. I
+        am confident my technical expertise and passion for fintech innovation will significantly contribute to
+        Affirm's success. I look forward to discussing how I can add value, hopefully before perfecting my
+        homemade pizza recipe!'
         length: follow the length of the example provided.
 
         Format your response as a JSON object with the following keys:
-        skills_in_priority_order, job_category, why_this_company, why_me, job_position_title, company_name
+        skills_in_priority_order, job_category, why_this_company, why_me, job_position_title, company_name, location.
         """
         return PromptTemplate(
-            input_variables=["job_description", "resume", "company_name", "job_position_title"],
+            input_variables=["job_description", "resume", "company_name", "job_position_title", "location"],
             template=template
         )
-        
+
     def _extract_json(self, text: str) -> Dict[str, Any]:
-        """Extract JSON content from the text and return as a dictionary."""
         match = re.search(r'\{[\s\S]*\}', text)
         if match:
             try:
@@ -798,19 +609,19 @@ homemade pizza recipe!'
             print(f"No JSON found in the text: {text}")
             return {}
 
-    async def analyze_job(self, job_description, resume, company_name, job_position_title, job_id, attempts=0):
+    async def analyze_job(self, job_description, resume, company_name, job_position_title, job_id, location, attempts=0):
         if attempts >= 3:
             print(f"Failed to analyze job after 3 attempts for {job_position_title} at {company_name}")
             return None
 
         prompt = self._get_prompt()
         chain = (
-            {"job_description": RunnablePassthrough(), "resume": RunnablePassthrough(), "company_name": RunnablePassthrough(), "job_position_title": RunnablePassthrough()}
+            {"job_description": RunnablePassthrough(), "resume": RunnablePassthrough(), "company_name": RunnablePassthrough(), "job_position_title": RunnablePassthrough(), "location": RunnablePassthrough()}
             | prompt
             | self.llm
             | self._extract_json
         )
-        result = await chain.ainvoke({"job_description": job_description, "resume": resume, "company_name": company_name, "job_position_title": job_position_title})
+        result = await chain.ainvoke({"job_description": job_description, "resume": resume, "company_name": company_name, "job_position_title": job_position_title, "location": location})
         
         try:
             analysis_output = JobAnalysisOutput(**result)
@@ -818,28 +629,26 @@ homemade pizza recipe!'
         except ValueError as e:
             print(f"Validation error (attempt {attempts + 1}): {e}")
             print(f"Raw result: {result}")
-            # Recursive call with incremented attempts
             return await self.analyze_job(job_description, resume, company_name, job_position_title, job_id, attempts + 1)
-
 
     async def process_jobs(self) -> Tuple[pd.DataFrame, pd.DataFrame]:
         if self.df is None or self.resume_text is None:
             raise ValueError("DataFrame and resume text must be provided.")
 
-        tasks = [self.analyze_job(row['job_description'], self.resume_text, row['company_name'], row["job_position_title"], row["job_id"])
+        tasks = [self.analyze_job(row['job_description'], self.resume_text, row['company_name'], row["job_position_title"], row["job_id"], row["location"])
             for _, row in self.df.iterrows()]
 
         results = []
         completed_tasks = 0
         total_tasks = len(tasks)
-        print(total_tasks)
+        print(f"Total jobs to process: {total_tasks}")
 
-        for i in range(0, total_tasks, min(total_tasks, 5)):
-            batch = tasks[i:i+min(total_tasks, 5)]
+        for i in range(0, total_tasks, 5):
+            batch = tasks[i:i+5]
             batch_results = await asyncio.gather(*batch)
             results.extend(batch_results)
             completed_tasks += len(batch)
-            print(f"-----------\n Processed {completed_tasks} out of {total_tasks} jobs \n -----------")
+            print(f"Processed {completed_tasks} out of {total_tasks} jobs")
 
         print(f"All tasks completed. Total jobs processed: {completed_tasks}")
 
@@ -849,53 +658,73 @@ homemade pizza recipe!'
             print("No valid results were obtained.")
             return pd.DataFrame(), pd.DataFrame()
 
-        new_columns, update_columns = zip(*[preprocess_job_analysis(result) for result in valid_results])
+        new_columns, update_columns = zip(*[self._preprocess_job_analysis(result) for result in valid_results])
         
         df_new = pd.DataFrame(new_columns)
         df_update = pd.DataFrame(update_columns)
         
-        # Add job_id to both DataFrames
         df_new['job_id'] = [result[0] for result in valid_results]
         df_update['job_id'] = [result[0] for result in valid_results]
         
         return df_new, df_update
 
+    @staticmethod
+    def _preprocess_job_analysis(result: Tuple[str, Optional[JobAnalysisOutput]]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        job_id, result = result
+        new_columns = {
+            "job_id": job_id,
+            "top_skills": None,
+            "job_category": None,
+            "why_this_company": None,
+            "why_me": None,
+        }
+        update_columns = {
+            "job_id": job_id,
+            "job_position_title": None,
+            "company_name": None,
+            "location": None
+        }
+        
+        if result is None:
+            return new_columns, update_columns
+        
+        try:
+            skills = result.skills_in_priority_order[:3]
+            if "Python" not in skills and "Python" in result.skills_in_priority_order:
+                skills = skills[:2] + ["Python"]
+            skills_str = ", ".join(skills[:-1]) + ", and " + skills[-1] if len(skills) > 1 else skills[0]
+            
+            new_columns.update({
+                "top_skills": skills_str,
+                "job_category": result.job_category.value,
+                "why_this_company": result.why_this_company,
+                "why_me": result.why_me,
+            })
+            
+            update_columns.update({
+                "job_position_title": result.job_position_title,
+                "company_name": result.company_name,
+                "location": result.location
+            })
+        except AttributeError as e:
+            print(f"AttributeError in preprocess_job_analysis: {e}")
+        
+        return new_columns, update_columns
 
+if __name__ == "__main__":
+   pass
 
-# async def main():
-#     def read_pdf_resume(file_path):
-#         with open(file_path, 'rb') as file:
-#             reader = PyPDF2.PdfReader(file)
-#             text = ""
-#             for page in reader.pages:
-#                 text += page.extract_text()
-#         return text
-    
-#     df = pd.read_csv("job_application_pre_processing.csv")
-#     df = df.drop_duplicates(subset='job_id', keep='first')
-    
-#     # analyzer = JobAnalyzer(df, read_pdf_resume("resume.pdf")) 
-#     # df_new, df_update = await analyzer.process_jobs()
-    
-#     # df_new.to_csv("new_columns.csv", index=False)
-#     # df_update.to_csv("update_columns.csv", index=False)
-    
-#     df_new = pd.read_csv("new_columns.csv")
-#     df_update = pd.read_csv("update_columns.csv")
-    
-#     # Merge new columns
-#     df = pd.merge(df, df_new, on='job_id', how='left')
-#     # Update existing columns
-#     df.update(df_update)
-    
-#     df.to_csv("test_csv.csv", index=False)
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
 
 ==================================================
 
-File: Utilities/proxies.py
+File: src/utilities/__init__.py
+==================================================
+from .utilities import *
+from .proxies import ProxyRotator
+
+==================================================
+
+File: src/utilities/proxies.py
 ==================================================
 import requests
 from bs4 import BeautifulSoup
@@ -993,216 +822,500 @@ class ProxyRotator:
 
 ==================================================
 
-File: ResumeManager/test.py
-==================================================
-
-
-==================================================
-
-File: ResumeManager/resumeManager.py
+File: src/utilities/utilities.py
 ==================================================
 import re
-from docx import Document
-from datetime import datetime
-import pandas as pd
-import os
-import sys
-import subprocess
-import re
+from datetime import datetime, timedelta
+from urllib.parse import urlencode, quote_plus
+import pytz
 
-# current_dir = os.path.dirname(os.path.abspath(__file__))
-# sys.path.insert(0, current_dir)
+from src.config import (
+    DEFAULT_SORT_BY, DEFAULT_EXPERIENCE_LEVEL, DEFAULT_DISTANCE,
+    DEFAULT_TIME_FILTER, DEFAULT_GEO_ID, DEFAULT_JOB_FUNCTION, DEFAULT_INDUSTRY
+)
 
+def calculate_posted_time(time_ago_string):
+    """Calculate the posted time based on a 'time ago' string."""
+    try:
+        current_time = datetime.now()
+        match = re.match(r'(\d+)\s+(\w+)\s+ago', time_ago_string)
+        if not match:
+            raise ValueError("Invalid input format")
 
-class ResumeManager():
-    def __init__(self, df) -> None:
-        self.df = df
-        for index, row in self.df.iterrows():
-            self.edit_resume_cover(row)
-    
-    def find_resume_cover_template(self, row):
-        resume_path = f"ResumeManager/ResumeTemplates/resume_data role.docx"
-        cover_path = f"ResumeManager/ResumeTemplates/cover_data role.docx"
-        try:
-            job_category = row["job_category"]
-            if job_category:
-                resume_path = f"ResumeManager/ResumeTemplates/resume_{job_category}.docx"
-                cover_path = f"ResumeManager/ResumeTemplates/cover_{job_category}.docx"
-            return resume_path, cover_path
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-            return resume_path, cover_path
-    
-    def table_edit_replace(self, doc, target, value):
-        for table in doc.tables:
-            for row in table.rows:
-                for cell in row.cells:
-                    if target in cell.text:
-                        for paragraph in cell.paragraphs:
-                            for run in paragraph.runs:
-                                run.text = run.text.replace(target, value)
-    
-    def paragraph_edit_replace(self, doc, target, value):
-        for paragraph in doc.paragraphs:
-            if target in paragraph.text:
-                inline = paragraph.runs
-                # Loop added to work with runs (strings with same style)
-                for i in range(len(inline)):
-                    if target in inline[i].text:
-                        text = inline[i].text.replace(target, value)
-                        inline[i].text = text
+        number, unit = int(match.group(1)), match.group(2).lower().rstrip('s')
 
-    
-    def edit_resume_cover(self, row):
-        # find resume and cover letter template path based on job category
-        resume_path, cover_path = self.find_resume_cover_template(row)
-        
-        resume_doc = Document(resume_path)
-        cover_doc = Document(cover_path)
-        top_skills = row["top_skills"]
-        company = row["company_name"]
-        job_role = row["job_position_title"]
-        company_location = row["location"]
-        today_date = datetime.now().strftime("%d-%b-%Y")
-        why_company = row["why_this_company"]
-        why_me = row["why_me"]
-        
-        if not job_role:
-            job_role = "Data Analyst"
-        if not top_skills:
-            top_skills = "Python, SQL, Power BI, Excel, Machine Learning"
-            
-
-        # output path
-        output_path = f"ResumeManager/OutputResumes/{company}_{job_role}_{today_date}/"
-        # Create the directory if it doesn't exist
-        os.makedirs(output_path, exist_ok=True)
-        
-        cover_input_dic = {
-            "[job role]": job_role,
-            "[company name]": company,
-            "[company location]": company_location,
-            "[job role]": job_role,
-            "[date]": today_date,
-            "[why company]": why_company,
-            "[why me]": why_me
+        units = {
+            'second': timedelta(seconds=1),
+            'minute': timedelta(minutes=1),
+            'hour': timedelta(hours=1),
+            'day': timedelta(days=1),
+            'week': timedelta(weeks=1),
+            'month': timedelta(days=30),  # Approximation
+            'year': timedelta(days=365)  # Approximation
         }
-        
-        self.create_resume(resume_doc, job_role, top_skills, output_path)
-        self.create_cover(cover_doc,output_path, cover_input_dic)
-        
-        
-    def create_cover(self, cover_doc, output_path, cover_input_dic):
-        self.table_edit_replace(cover_doc, "[job role]", cover_input_dic["[job role]"])
-        for key, value in cover_input_dic.items():
-            self.paragraph_edit_replace(cover_doc, key, value)
-        docx_path = os.path.join(output_path, "Krishnakumar Cover Letter.docx")
-        cover_doc.save(docx_path)
-        self.save_to_pdf(output_path, docx_path)
-        
+
+        if unit not in units:
+            raise ValueError("Invalid time unit")
+
+        return current_time - (units[unit] * number)
+
+    except Exception as e:
+        print(f"An error occurred in calculate_posted_time: {str(e)}")
+        return datetime.now()
+
+def convert_to_iso_time(date_string, local_timezone='America/New_York'):
+    """Convert a local datetime string to ISO 8601 format in UTC."""
+    local_time = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S.%f")
+    local_tz = pytz.timezone(local_timezone)
+    local_time_with_tz = local_tz.localize(local_time)
+    utc_time = local_time_with_tz.astimezone(pytz.UTC)
+    return utc_time.isoformat()
+
+def duration_to_seconds(duration_string):
+    """Convert a duration string to seconds."""
+    time_units = {
+        'second': 1,
+        'minute': 60,
+        'hour': 3600,
+        'day': 86400,
+        'week': 604800
+    }
+    default_seconds = 86400  # 1 day in seconds
+
+    total_seconds = 0
+    parts = re.findall(r'(\d+)\s*(\w+)', duration_string)
     
-    def create_resume(self, resume_doc, job_role, top_skills, output_path):
-        self.table_edit_replace(resume_doc, "[job role]", job_role)
-        self.paragraph_edit_replace(resume_doc, "[top skills]", top_skills)
-        docx_path = os.path.join(output_path, "Krishnakumar Resume.docx")
-        resume_doc.save(docx_path)
-        self.save_to_pdf(output_path, docx_path)
-        
-        
-    def save_to_pdf(self, output_path, docx_path):
-        # Convert .docx to .pdf using LibreOffice
-        libreoffice_path = "/Applications/LibreOffice.app/Contents/MacOS/soffice"
-        # resume_pdf_path = os.path.join(output_path, f"Krishnakumar {doc_type}.pdf")
-        try:
-            subprocess.run([
-                libreoffice_path,
-                "--headless",
-                "--convert-to",
-                "pdf",
-                "--outdir",
-                output_path,
-                docx_path
-            ], check=True)
-        except subprocess.CalledProcessError as e:
-            print(f"Error converting to PDF: {e}")
+    for number, unit in parts:
+        number = int(number)
+        unit = unit.lower().rstrip('s')
+        if unit in time_units:
+            total_seconds += number * time_units[unit]
+
+    if total_seconds == 0:
+        total_seconds = default_seconds
+
+    return f"r{str(total_seconds)}"
+
+
+def generate_linkedin_job_search_url(
+    keyword,
+    sort_by=DEFAULT_SORT_BY,
+    time_filter=DEFAULT_TIME_FILTER,
+    experience_level=DEFAULT_EXPERIENCE_LEVEL,
+    distance=DEFAULT_DISTANCE,
+    industry=DEFAULT_INDUSTRY,
+    geo_id=DEFAULT_GEO_ID,
+    job_function=DEFAULT_JOB_FUNCTION
+):
+    """Generate a LinkedIn job search URL with the given parameters."""
+    time_filter = duration_to_seconds(time_filter)
+
+    params = {
+        "keywords": keyword,
+        "sortBy": sort_by,
+        "f_TPR": time_filter,
+        "f_E": experience_level,
+        "distance": distance,
+        "geoId": geo_id,
+        "origin": "JOB_SEARCH_PAGE_JOB_FILTER",
+        "refresh": "false",
+        "spellCorrectionEnabled": "true"
+    }
+
+    if industry:
+        params["f_I"] = industry
+
+    # Remove any None values from the params
+    params = {k: v for k, v in params.items() if v is not None}
+
+    base_url = "https://www.linkedin.com/jobs/search/?"
+    encoded_params = urlencode(params, quote_via=quote_plus)
+    
+    # Add the job_function parameter separately without encoding
+    if job_function:
+        encoded_params += f"&f_F={job_function}"
+    if industry:
+        encoded_params += f"&f_I={industry}"
+
+    return base_url + encoded_params
 
 ==================================================
 
-File: linkedin/linkedInscrapper.py
+File: src/notion_integration/notion_manager.py
+==================================================
+import os
+from typing import Dict, Any, List
+from notion_client import Client
+import pandas as pd
+from dotenv import load_dotenv
+from src.config import NOTION_API_KEY, NOTION_SCHEMA, NOTION_DATABASE_ID
+
+class NotionManager:
+    def __init__(self, df,  database_id: str = NOTION_DATABASE_ID):
+        self.notion = self._initialize_notion_client()
+        self.df = df
+        self.database_id = database_id
+        self.sync_to_notion(self.df)
+
+    @staticmethod
+    def _initialize_notion_client() -> Client:
+        load_dotenv()
+        api_key = os.getenv("NOTION_API_KEY", NOTION_API_KEY)
+        if not api_key:
+            raise ValueError("Notion API key not found in environment variables or config")
+        return Client(auth=api_key)
+
+    def create_property(self, property_name: str, property_type: str) -> None:
+        try:
+            self.notion.databases.update(
+                database_id=self.database_id,
+                properties={
+                    property_name: {
+                        "type": property_type,
+                        property_type: {}
+                    }
+                }
+            )
+            print(f"Property '{property_name}' of type '{property_type}' created successfully.")
+        except Exception as e:
+            print(f"Error creating property: {e}")
+
+    def sync_to_notion(self, df: pd.DataFrame) -> None:
+        for _, row in df.iterrows():
+            properties = self._prepare_properties(row)
+            try:
+                page = self.notion.pages.create(
+                    parent={"database_id": self.database_id},
+                    properties=properties,
+                    icon={"type": "external", "external": {"url": row['company_logo']}}
+                )
+                self.add_detailed_content(page["id"], row)
+                print(f"Row added successfully: {row['job_id']}")
+            except Exception as e:
+                print(f"Error adding row: {row['job_id']}. Error: {e}")
+
+    def _prepare_properties(self, row: pd.Series) -> Dict[str, Any]:
+        properties = {}
+        for col, prop_data in NOTION_SCHEMA.items():
+            notion_prop_name = prop_data["notion_prop_name"]
+            notion_type = prop_data["type"]
+            value = row[col]
+
+            properties[notion_prop_name] = self._format_property(notion_type, value)
+        return properties
+
+    @staticmethod
+    def _format_property(notion_type: str, value: Any) -> Dict[str, Any]:
+        if notion_type == "title":
+            return {"title": [{"text": {"content": str(value)}}]}
+        elif notion_type == "rich_text":
+            return {"rich_text": [{"text": {"content": str(value)}}]}
+        elif notion_type == "number":
+            return {"number": float(value) if pd.notna(value) else None}
+        elif notion_type == "select":
+            return {"select": {"name": str(value).replace(",", "-")}}
+        elif notion_type == "multi_select":
+            return {"multi_select": [{"name": item.strip()} for item in str(value).split(',')]}
+        elif notion_type == "date":
+            return {"date": {"start": str(value), "time_zone": "America/Montreal"}}
+        elif notion_type == "checkbox":
+            return {"checkbox": bool(value)}
+        elif notion_type == "url":
+            return {"url": str(value)}
+        else:
+            raise ValueError(f"Unsupported Notion property type: {notion_type}")
+
+    def add_detailed_content(self, page_id: str, row: pd.Series) -> None:
+        blocks = self._create_content_blocks(row)
+        self.notion.blocks.children.append(page_id, children=blocks)
+
+    @staticmethod
+    def _create_content_blocks(row: pd.Series) -> List[Dict[str, Any]]:
+        blocks = []
+        sections = [
+            ("Job Description", row['job_description']),
+            ("Why This Company", row['why_this_company']),
+            ("Why Me", row['why_me'])
+        ]
+
+        for title, content in sections:
+            blocks.append({
+                "object": "block",
+                "type": "heading_2",
+                "heading_2": {
+                    "rich_text": [{"type": "text", "text": {"content": title}}]
+                }
+            })
+            blocks.extend(NotionManager._create_paragraph_blocks(content))
+
+        return blocks
+
+    @staticmethod
+    def _create_paragraph_blocks(content: str) -> List[Dict[str, Any]]:
+        blocks = []
+        while content:
+            block_content = content[:2000]
+            blocks.append({
+                "object": "block",
+                "type": "paragraph",
+                "paragraph": {
+                    "rich_text": [{"type": "text", "text": {"content": block_content}}]
+                }
+            })
+            content = content[2000:]
+        return blocks
+
+    def one_way_sync(self, df: pd.DataFrame) -> None:
+        self.sync_to_notion(df)
+
+if __name__ == "__main__":
+    # Example usage
+    pass
+
+
+==================================================
+
+File: src/notion_integration/__init__.py
+==================================================
+from .notion_manager import NotionManager
+
+==================================================
+
+File: src/scraper_linkedin/linkedin_manager.py
+==================================================
+import math
+import logging
+from typing import List, Dict, Any, Optional
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import WebDriverException
+import time
+from src.config import LINKEDIN_EMAIL, LINKEDIN_PASSWORD
+
+from .linkedin_scraper import LinkedInScraper
+
+class LinkedIn:
+    """
+    A class to manage LinkedIn job searches and data extraction.
+    """
+
+    def __init__(self):
+        """
+        A class to manage LinkedIn job searches and data extraction.
+        """
+        self.logger = logging.getLogger(__name__)
+        self.linkedin = LinkedInScraper(LINKEDIN_EMAIL,LINKEDIN_PASSWORD)
+        self.scraped_job_data: List[Dict[str, Any]] = []
+
+    def search_jobs_runner(self, keyword: str, **kwargs) -> None:
+        """
+        Run a job search and process the results.
+
+        Args:
+            keyword (str): The job search keyword.
+            **kwargs: Additional search parameters.
+        """
+        try:
+            result_title, no_of_results = self.linkedin.search_job(keyword, **kwargs)
+            
+            if result_title is None or no_of_results is None:
+                self.logger.error("Failed to retrieve search results")
+                return
+
+            self.logger.info(f"Search results: {result_title}, Total jobs: {no_of_results}")
+
+            total_pages = math.ceil(no_of_results / 25)
+            for page in range(total_pages):
+                try:
+                    self._process_page(page)
+                except Exception as e:
+                    self.logger.error(f"Error processing page {page + 1}: {str(e)}")
+
+                if page != total_pages - 1:
+                    try:
+                        self.linkedin.page_clicker(page + 2)
+                    except Exception as e:
+                        self.logger.error(f"Error clicking to next page: {str(e)}")
+                        break
+
+        except Exception as e:
+            self.logger.error(f"An error occurred in search_jobs_runner: {str(e)}")
+
+        finally:
+            if self.scraped_job_data:
+                self.logger.info(f"Successfully scraped {len(self.scraped_job_data)} job listings")
+            self.linkedin.driver.quit()
+
+    def _process_page(self, page: int) -> None:
+        """
+        Process a single page of job listings.
+
+        Args:
+            page (int): The page number being processed.
+        """
+        try:
+            self.linkedin.scroll_to_bottom_element(By.CSS_SELECTOR, "div.jobs-search-results-list")
+            ul_element = self.linkedin.driver.find_element(By.CSS_SELECTOR, "ul.scaffold-layout__list-container")
+            li_elements = ul_element.find_elements(By.CSS_SELECTOR, "li.jobs-search-results__list-item")
+            
+            self.logger.info(f"Found {len(li_elements)} job listings on page {page + 1}")
+
+            for i, li in enumerate(li_elements):
+                try:
+                    job_data = self._process_job_listing(li, i)
+                    if job_data:
+                        self.scraped_job_data.append(job_data)
+                except Exception as e:
+                    self.logger.error(f"Error processing job listing {i + 1} on page {page + 1}: {str(e)}")
+                
+                self._scroll_after_processing(i)
+
+        except WebDriverException as e:
+            self.logger.error(f"WebDriver error while processing page {page + 1}: {str(e)}")
+        except Exception as e:
+            self.logger.error(f"Unexpected error processing page {page + 1}: {str(e)}")
+
+    def _process_job_listing(self, li_element: Any, index: int) -> Optional[Dict[str, Any]]:
+        """
+        Process an individual job listing.
+
+        Args:
+            li_element: The WebElement representing the job listing.
+            index (int): The index of the job listing on the page.
+
+        Returns:
+            Optional[Dict[str, Any]]: The scraped job data, or None if an error occurred.
+        """
+        try:
+            self._click_job_listing(li_element)
+            job_data = self.linkedin.crab_job_details()
+            self.logger.info(f"Successfully scraped job {index + 1}: {job_data.get('job_position_title', 'Unknown Title')}")
+            return job_data
+        except Exception as e:
+            self.logger.error(f"Error scraping details for job {index + 1}: {str(e)}")
+            return None
+
+    def _click_job_listing(self, li_element: Any) -> None:
+        """
+        Click on a job listing to view its details.
+
+        Args:
+            li_element: The WebElement representing the job listing.
+        """
+        try:
+            div_clickable = li_element.find_element(By.CSS_SELECTOR, "div.job-card-container--clickable")
+            div_clickable.click()
+        except Exception:
+            self.logger.warning("Couldn't click div.job-card-container--clickable, trying to click li")
+            li_element.click()
+
+    def _scroll_after_processing(self, index: int) -> None:
+        """
+        Scroll the page after processing a job listing.
+
+        Args:
+            index (int): The index of the job listing that was just processed.
+        """
+        try:
+            self.linkedin.scroll_to_bottom_element(By.CSS_SELECTOR, "div.jobs-search-results-list", scroll_full=False)
+        except Exception as e:
+            self.logger.warning(f"Error scrolling after processing job {index + 1}: {str(e)}")
+
+    def get_scraped_data(self) -> List[Dict[str, Any]]:
+        """
+        Get the scraped job data.
+
+        Returns:
+            List[Dict[str, Any]]: The list of scraped job data.
+        """
+        return self.scraped_job_data
+
+
+
+
+==================================================
+
+File: src/scraper_linkedin/__init__.py
+==================================================
+from .linkedin_scraper import LinkedInScraper
+from .linkedin_manager import LinkedIn
+
+__all__ = ['LinkedInScraper', 'LinkedIn']
+
+
+==================================================
+
+File: src/scraper_linkedin/linkedin_scraper.py
 ==================================================
 import time
+import os
+import pickle
+import logging
+import re
+import random
+from typing import Optional, Tuple, Dict, Any
+from src.config import COOKIE_FILE
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium_stealth import stealth
-import pickle
-import os
-import sys
-import logging
-import re
-import random
-from utilities import generate_linkedin_job_search_url
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-sys.path.insert(0, parent_dir)
-
-# Set up logging
-logging.basicConfig(filename='linkedin_scraper.log', level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
-
-def create_stealth_driver():
-    options = Options()
-    options.add_argument("start-maximized")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option('useAutomationExtension', False)
-    driver = webdriver.Chrome(options=options)
-    
-    stealth(driver,
-        languages=["en-US", "en"],
-        vendor="Google Inc.",
-        platform="Win32",
-        webgl_vendor="Intel Inc.",
-        renderer="Intel Iris OpenGL Engine",
-        fix_hairline=True,
-    )
-    
-    return driver
+from src.utilities import generate_linkedin_job_search_url
 
 class LinkedInScraper:
-    def __init__(self, username, password, cookie_file="linkedin_cookies.pkl"):
+    def __init__(self, username: str, password: str, cookie_file: str = COOKIE_FILE):
         self.username = username
         self.password = password
         self.cookie_file = cookie_file
-        self.driver = create_stealth_driver()
-        self.initial_start()
-    
-    def initial_start(self):
+        self.driver = self._create_stealth_driver()
+        self.logger = logging.getLogger(__name__)
+        self._initial_start()
+
+    def _create_stealth_driver(self) -> webdriver.Chrome:
+        options = Options()
+        options.add_argument("start-maximized")
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option('useAutomationExtension', False)
+        driver = webdriver.Chrome(options=options)
+        
+        stealth(driver,
+            languages=["en-US", "en"],
+            vendor="Google Inc.",
+            platform="Win32",
+            webgl_vendor="Intel Inc.",
+            renderer="Intel Iris OpenGL Engine",
+            fix_hairline=True,
+        )
+        
+        return driver
+
+    def _initial_start(self) -> None:
         try:
             if os.path.exists(self.cookie_file):
                 self.driver.get("https://www.linkedin.com")
-                self.load_cookies()
+                self._load_cookies()
                 self.driver.refresh()
                 
                 time.sleep(5)
                 
                 if "feed" not in self.driver.current_url:
-                    logging.info("Cookies expired, logging in again")
-                    self.login_to_linkedin()
+                    self.logger.info("Cookies expired, logging in again")
+                    self._login_to_linkedin()
                 else:
-                    logging.info("Successfully logged in using cookies")
+                    self.logger.info("Successfully logged in using cookies")
             else:
-                self.login_to_linkedin()
+                self._login_to_linkedin()
             
-            self.save_cookies()
+            self._save_cookies()
             
         except Exception as e:
-            logging.error(f"An error occurred during initial start: {str(e)}")
-    
-    def login_to_linkedin(self):
+            self.logger.error(f"An error occurred during initial start: {str(e)}")
+
+    def _login_to_linkedin(self) -> None:
         try:
             self.driver.get("https://www.linkedin.com/login")
             time.sleep(random.uniform(2, 8))
@@ -1226,34 +1339,34 @@ class LinkedInScraper:
                 EC.presence_of_element_located((By.ID, "global-nav"))
             )
             
-            logging.info("Successfully logged in to LinkedIn")
+            self.logger.info("Successfully logged in to LinkedIn")
         except Exception as e:
-            logging.error(f"Error during login: {str(e)}")
+            self.logger.error(f"Error during login: {str(e)}")
             raise
-        
-    def save_cookies(self):
+
+    def _save_cookies(self) -> None:
         try:
             cookies = self.driver.get_cookies()
             with open(self.cookie_file, "wb") as f:
                 pickle.dump(cookies, f)
-            logging.info(f"Saved cookies to {self.cookie_file}")
+            self.logger.info(f"Saved cookies to {self.cookie_file}")
         except Exception as e:
-            logging.error(f"Error saving cookies: {str(e)}")
-    
-    def load_cookies(self):
+            self.logger.error(f"Error saving cookies: {str(e)}")
+
+    def _load_cookies(self) -> None:
         try:
             if os.path.exists(self.cookie_file):
                 with open(self.cookie_file, "rb") as f:
                     cookies = pickle.load(f)
                     for cookie in cookies:
                         self.driver.add_cookie(cookie)
-                logging.info(f"Loaded cookies from {self.cookie_file}")
+                self.logger.info(f"Loaded cookies from {self.cookie_file}")
             else:
-                logging.warning(f"Cookie file {self.cookie_file} not found")
+                self.logger.warning(f"Cookie file {self.cookie_file} not found")
         except Exception as e:
-            logging.error(f"Error loading cookies: {str(e)}")
-    
-    def scroll_to_bottom_page(self):
+            self.logger.error(f"Error loading cookies: {str(e)}")
+
+    def scroll_to_bottom_page(self) -> None:
         try:
             SCROLL_PAUSE_TIME = 2
             last_height = self.driver.execute_script("return document.body.scrollHeight")
@@ -1265,9 +1378,9 @@ class LinkedInScraper:
                     break
                 last_height = new_height
         except Exception as e:
-            logging.error(f"Error during scrolling: {str(e)}")
-    
-    def scroll_to_bottom_element(self, by, element_value, scroll_full=True):
+            self.logger.error(f"Error during scrolling: {str(e)}")
+
+    def scroll_to_bottom_element(self, by: By, element_value: str, scroll_full: bool = True) -> None:
         try:
             element = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((by, element_value))
@@ -1296,58 +1409,59 @@ class LinkedInScraper:
 
             ActionChains(self.driver).move_to_element(element).perform()
         except Exception as e:
-            logging.error(f"Error during element scrolling: {str(e)}")
-    
-    def search_job(self, keyword, **kwargs):
+            self.logger.error(f"Error during element scrolling: {str(e)}")
+
+    def search_job(self, keyword: str, **kwargs) -> Tuple[Optional[str], Optional[int]]:
         try:
             url = generate_linkedin_job_search_url(keyword, **kwargs)
             self.driver.get(url)
-            logging.info(f"Searching for jobs with keyword: {keyword}")
+            self.logger.info(f"Searching for jobs with keyword: {keyword}")
             result_title = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.ID, "results-list__title"))
             ).text
-            no_of_results = int(self.driver.find_element(By.CSS_SELECTOR, "div.jobs-search-results-list__subtitle span").text.split()[0])    
-            logging.info(f"Search results loaded successfully for {result_title} with {no_of_results} results")
-            
+            no_of_results = int(self.driver.find_element(By.CSS_SELECTOR, "div.jobs-search-results-list__subtitle span").text.split()[0].replace(",", ""))    
+            self.logger.info(f"Search results loaded successfully for {result_title} with {no_of_results} results")
             return result_title, no_of_results
         except Exception as e:
-            logging.error(f"Error during job search: {str(e)}")
-            return None
+            self.logger.error(f"Error during job search: {str(e)}")
+            return None, None
 
-    def page_clicker(self, page_no):
+    def page_clicker(self, page_no: int) -> None:
         try:
             button = WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, f"//button[@aria-label='Page {page_no}']"))
             )
             button.click()
             time.sleep(5)
-            logging.info(f"Successfully clicked the 'Page {page_no}' button")
+            self.logger.info(f"Successfully clicked the 'Page {page_no}' button")
         except Exception as e:
-            logging.error(f"Error clicking page button: {str(e)}")
-            
-    def get_job_id(self, href):
+            self.logger.error(f"Error clicking page button: {str(e)}")
+
+    @staticmethod
+    def get_job_id(href: str) -> Optional[str]:
         try:
             return href.split("/")[5]
         except Exception as e:
             logging.error(f"Error extracting job ID: {str(e)}")
             return None
-    
-    def remove_characters(self, text):
+
+    @staticmethod
+    def remove_characters(text: str) -> int:
         try:
             number = re.findall(r'\d+', text)
             return int(number[0]) if number else 0
         except Exception as e:
             logging.error(f"Error removing characters: {str(e)}")
             return 0
-    
-    def extract_job_details(self, job_element):
+
+    def extract_job_details(self, job_element: webdriver.remote.webelement.WebElement) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str]]:
         salary = workplace = job_type = experience_level = None
         try:
             salary_element = job_element.find_element(By.CSS_SELECTOR, "span > span:not([class])")
             children = salary_element.find_elements(By.XPATH, "./*")
             salary = salary_element.text.strip() if len(children) == 0 else None
         except Exception as e:
-            logging.error(f"Error extracting salary: {str(e)}")
+            self.logger.error(f"Error extracting salary: {str(e)}")
 
         try:
             span_models = job_element.find_elements(By.XPATH, 
@@ -1365,11 +1479,11 @@ class LinkedInScraper:
                     workplace = text
                 
         except Exception as e:
-            logging.error(f"Error extracting job details: {str(e)}")
+            self.logger.error(f"Error extracting job details: {str(e)}")
 
         return salary, workplace, job_type, experience_level
-        
-    def apply_link_finder(self, element):
+
+    def apply_link_finder(self, element: webdriver.remote.webelement.WebElement) -> Tuple[bool, Optional[str]]:
         is_easy_apply = False
         apply_link = None
         try:
@@ -1387,11 +1501,11 @@ class LinkedInScraper:
                     time.sleep(4)
                     self.driver.switch_to.window(self.driver.window_handles[0])
         except Exception as e:
-            logging.error(f"Error finding apply link: {str(e)}")
+            self.logger.error(f"Error finding apply link: {str(e)}")
         
         return is_easy_apply, apply_link
-                
-    def extract_industry(self, element):
+
+    def extract_industry(self, element: webdriver.remote.webelement.WebElement) -> Optional[str]:
         try:
             industry_row_span = element.find_elements(By.CSS_SELECTOR, "li.job-details-jobs-unified-top-card__job-insight")[1].find_element(By.CSS_SELECTOR, "span").text
             if "·" in industry_row_span:
@@ -1399,192 +1513,233 @@ class LinkedInScraper:
             elif "employees" not in industry_row_span:
                 return industry_row_span.strip()
         except Exception as e:
-            logging.error(f"Error extracting industry: {str(e)}")
+            self.logger.error(f"Error extracting industry: {str(e)}")
         return None
-        
-    def crab_job_details(self):
-        job_data = {
-            'job_position_title': None,
-            'job_id': None,
-            'job_position_link': None,
-            'company_logo': None,
-            'company_name': None,
-            'location': None,
-            'days_ago': None,
-            'no_of_applicants': None,
-            'salary': None,
-            'workplace': None,
-            'job_type': None,
-            'experience_level': None,
-            'industry': None,
-            'is_easy_apply': False,
-            'apply_link': None,
-            'job_description': None
-        }
 
-        try:
-            time.sleep(random.uniform(2, 8))
-            job_details = self.driver.find_element(By.CSS_SELECTOR, "div.jobs-search__job-details--wrapper")
+    def crab_job_details(self) -> Dict[str, Any]:
+            """
+            Extracts detailed information about a job listing.
 
-            # Job position, job id, job link
+            Returns:
+                Dict[str, Any]: A dictionary containing various details about the job.
+            """
+            job_data = {
+                'job_position_title': None,
+                'job_id': None,
+                'job_position_link': None,
+                'company_logo': None,
+                'company_name': None,
+                'location': None,
+                'days_ago': None,
+                'no_of_applicants': None,
+                'salary': None,
+                'workplace': None,
+                'job_type': None,
+                'experience_level': None,
+                'industry': None,
+                'is_easy_apply': False,
+                'apply_link': None,
+                'job_description': None
+            }
+
             try:
-                job_position_element = job_details.find_element(By.CSS_SELECTOR, "h1[class*='t-24 t-bold'] a")
-                job_data['job_position_title'] = job_position_element.text
-                job_data['job_position_link'] = job_position_element.get_attribute("href")
-                job_data['job_id'] = self.get_job_id(job_data['job_position_link'])
+                time.sleep(random.uniform(2, 8))
+                job_details = self._wait_for_element_presence("div.jobs-search__job-details--wrapper")
+
+                self._extract_job_position_details(job_data, job_details)
+                self._extract_company_details(job_data, job_details)
+                self._extract_job_metadata(job_data, job_details)
+                self._extract_job_highlights(job_data, job_details)
+                self._extract_industry(job_data, job_details)
+                self._extract_apply_info(job_data, job_details)
+                self._extract_job_description(job_data, job_details)
+
             except Exception as e:
-                logging.error(f"Error extracting job position details: {str(e)}")
+                self.logger.error(f"Error in crab_job_details: {str(e)}")
 
-            # Company name, image
-            try:
-                job_data['company_logo'] = job_details.find_element(By.CSS_SELECTOR, "div.flex-1 a.app-aware-link img").get_attribute('src')
-                job_data['company_name'] = job_details.find_element(By.CSS_SELECTOR, "div.job-details-jobs-unified-top-card__company-name a.app-aware-link").text
-            except Exception as e:
-                logging.error(f"Error extracting company details: {str(e)}")
-
-            # Location, posted ago, no_of_applicants
-            try:
-                primary_description_element = job_details.find_elements(By.CSS_SELECTOR, "div.job-details-jobs-unified-top-card__primary-description-container div span.tvm__text")
-                job_data['location'] = primary_description_element[0].text if len(primary_description_element) > 0 else None
-                job_data['days_ago'] = primary_description_element[2].find_element(By.CSS_SELECTOR, "span:not([class])").text if len(primary_description_element) > 2 else None
-                job_data['no_of_applicants'] = self.remove_characters(primary_description_element[4].text) if len(primary_description_element) > 4 else None
-            except Exception as e:
-                logging.error(f"Error extracting job metadata: {str(e)}")
-
-            # Job details (salary, workplace, job_type, experience_level)
-            try:
-                highlight_element = job_details.find_element(By.CSS_SELECTOR, "li.job-details-jobs-unified-top-card__job-insight--highlight")
-                job_data['salary'], job_data['workplace'], job_data['job_type'], job_data['experience_level'] = self.extract_job_details(highlight_element)
-            except Exception as e:
-                logging.error(f"Error extracting job details: {str(e)}")
-
-            # Industry
-            try:
-                job_data['industry'] = self.extract_industry(job_details)
-            except Exception as e:
-                logging.error(f"Error extracting industry: {str(e)}")
-
-            # Apply link and easy apply status
-            try:
-                job_data['is_easy_apply'], job_data['apply_link'] = self.apply_link_finder(job_details)
-            except Exception as e:
-                logging.error(f"Error extracting apply link: {str(e)}")
-
-            # Job description
-            try:
-                job_data['job_description'] = job_details.find_element(By.CSS_SELECTOR, "article.jobs-description__container").text.replace('\n', ' ')
-            except Exception as e:
-                logging.error(f"Error extracting job description: {str(e)}")
-
-        except Exception as e:
-            logging.error(f"Major error in crab_job_details: {str(e)}")
-
-        return job_data
-
-
-==================================================
-
-File: linkedin/linkedIn.py
-==================================================
-import math
-import logging
-from selenium.webdriver.common.by import By
-import os
-import sys
-import time
-
-# Add the parent directory to the Python path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, current_dir)
-
-from linkedInscrapper import LinkedInScraper
-
-
-# Set up logging
-logging.basicConfig(filename='linkedin_search.log', level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
-
-class LinkedIn:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-        self.linkedin = LinkedInScraper(self.username, self.password)
-        self.scraped_job_data = []
-
-    def search_jobs_runner(self, keyword, sort_by="DD", time_filter="r604800", experience_level="2,3", distance=25, industry=None):
-        try:
-            result_title, no_of_results = self.linkedin.search_job(keyword, sort_by=sort_by, time_filter=time_filter, 
-                                                                   experience_level=experience_level, distance=distance, industry=industry)
-            
-            if result_title is None or no_of_results is None:
-                logging.error("Failed to retrieve search results")
-                return
-
-            logging.info(f"Search results: {result_title}, Total jobs: {no_of_results}")
-
-            total_pages = math.ceil(no_of_results / 25)
-            for page in range(total_pages):
-                try:
-                    self._process_page(page)
-                except Exception as e:
-                    logging.error(f"Error processing page {page + 1}: {str(e)}")
-
-                if page != total_pages - 1:
-                    try:
-                        self.linkedin.page_clicker(page + 2)
-                    except Exception as e:
-                        logging.error(f"Error clicking to next page: {str(e)}")
-                        break
-
-        except Exception as e:
-            logging.error(f"An error occurred in search_jobs_runner: {str(e)}")
-
-        finally:
-            if len(self.scraped_job_data) > 0:
-                logging.info(f"Successfully scraped {len(self.scraped_job_data)} job listings")
-            self.linkedin.driver.quit()
-            
-
-    def _process_page(self, page):
-        try:
-            self.linkedin.scroll_to_bottom_element(By.CSS_SELECTOR, "div.jobs-search-results-list")
-            ul_element = self.linkedin.driver.find_element(By.CSS_SELECTOR, "ul.scaffold-layout__list-container")
-            li_elements = ul_element.find_elements(By.CSS_SELECTOR, "li.jobs-search-results__list-item")
-            
-            logging.info(f"Found {len(li_elements)} job listings on page {page + 1}")
-
-            for i, li in enumerate(li_elements):
-                try:
-                    job_data = self._process_job_listing(li, i)
-                    self.scraped_job_data.append(job_data)
-                except Exception as e:
-                    logging.error(f"Error processing job listing {i + 1} on page {page + 1}: {str(e)}")
-                
-                try:
-                    self.linkedin.scroll_to_bottom_element(By.CSS_SELECTOR, "div.jobs-search-results-list", scroll_full=False)
-                except Exception as e:
-                    logging.warning(f"Error scrolling after processing job {i + 1}: {str(e)}") 
-
-        except Exception as e:
-            print("error while processing page")
-            logging.error(f"Error processing page {page + 1}: {str(e)}")
-
-    def _process_job_listing(self, li, index):
-        try:
-            div_clickable = li.find_element(By.CSS_SELECTOR, "div.job-card-container--clickable")
-            div_clickable.click()
-        except Exception as e:
-            logging.warning(f"Couldn't click div.job-card-container--clickable for job {index + 1}, trying to click li: {str(e)}")
-            li.click()
-
-        try:
-            job_data = self.linkedin.crab_job_details()
-            logging.info(f"Successfully scraped job {index + 1}: {job_data.get('job_position_title', 'Unknown Title')}")
-            
             return job_data
-            
+
+    def _wait_for_element_presence(self, css_selector: str, timeout: int = 10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, css_selector))
+        )
+
+    def _extract_job_position_details(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            job_position_element = job_details.find_element(By.CSS_SELECTOR, "h1[class*='t-24 t-bold'] a")
+            job_data['job_position_title'] = job_position_element.text
+            job_data['job_position_link'] = job_position_element.get_attribute("href")
+            job_data['job_id'] = self.get_job_id(job_data['job_position_link'])
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting job position details: {str(e)}")
+
+    def _extract_company_details(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            job_data['company_logo'] = job_details.find_element(By.CSS_SELECTOR, "div.flex-1 a.app-aware-link img").get_attribute('src')
+            job_data['company_name'] = job_details.find_element(By.CSS_SELECTOR, "div.job-details-jobs-unified-top-card__company-name").text
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting company details: {str(e)}")
+
+    def _extract_job_metadata(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            primary_description_elements = job_details.find_elements(By.CSS_SELECTOR, "div.job-details-jobs-unified-top-card__primary-description-container div span.tvm__text")
+            if len(primary_description_elements) > 0:
+                job_data['location'] = primary_description_elements[0].text
+            if len(primary_description_elements) > 2:
+                job_data['days_ago'] = primary_description_elements[2].find_element(By.CSS_SELECTOR, "span:not([class])").text
+            if len(primary_description_elements) > 4:
+                job_data['no_of_applicants'] = self.remove_characters(primary_description_elements[4].text)
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting job metadata: {str(e)}")
+
+    def _extract_job_highlights(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            highlight_element = job_details.find_element(By.CSS_SELECTOR, "li.job-details-jobs-unified-top-card__job-insight--highlight")
+            job_data['salary'], job_data['workplace'], job_data['job_type'], job_data['experience_level'] = self.extract_job_details(highlight_element)
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting job highlights: {str(e)}")
+
+    def _extract_industry(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            job_data['industry'] = self.extract_industry(job_details)
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting industry: {str(e)}")
+
+    def _extract_apply_info(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            job_data['is_easy_apply'], job_data['apply_link'] = self.apply_link_finder(job_details)
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting apply info: {str(e)}")
+
+    def _extract_job_description(self, job_data: Dict[str, Any], job_details: Any) -> None:
+        try:
+            job_data['job_description'] = job_details.find_element(By.CSS_SELECTOR, "article.jobs-description__container").text.replace('\n', ' ')
+        except NoSuchElementException as e:
+            self.logger.error(f"Error extracting job description: {str(e)}")
+
+
+==================================================
+
+File: src/document_generator/__init__.py
+==================================================
+from .resume_maker import ResumeManager
+
+==================================================
+
+File: src/document_generator/resume_maker.py
+==================================================
+import os
+import subprocess
+from typing import Dict, Tuple
+from docx import Document
+from datetime import datetime
+import pandas as pd
+from src.config import RESUME_TEMPLATES_DIR, OUTPUT_RESUMES_DIR
+
+class ResumeManager:
+    def __init__(self, df: pd.DataFrame):
+        self.df = df
+        self.process_all_resumes()
+
+    def process_all_resumes(self) -> None:
+        for _, row in self.df.iterrows():
+            self.create_resume_and_cover(row)
+
+    def find_resume_cover_template(self, job_category: str) -> Tuple[str, str]:
+        resume_path = os.path.join(RESUME_TEMPLATES_DIR, f"resume_data role.docx")
+        cover_path = os.path.join(RESUME_TEMPLATES_DIR, f"cover_data role.docx")
+        try:
+            if job_category:
+                resume_path = os.path.join(RESUME_TEMPLATES_DIR, f"resume_{job_category}.docx")
+                cover_path = os.path.join(RESUME_TEMPLATES_DIR, f"cover_{job_category}.docx")
+            return resume_path, cover_path
         except Exception as e:
-            logging.error(f"Error scraping details for job {index + 1}: {str(e)}")
+            print(f"Error finding template: {str(e)}")
+            return resume_path, cover_path
+
+    @staticmethod
+    def table_edit_replace(doc: Document, target: str, value: str) -> None:
+        for table in doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    if target in cell.text:
+                        for paragraph in cell.paragraphs:
+                            for run in paragraph.runs:
+                                run.text = run.text.replace(target, value)
+
+    @staticmethod
+    def paragraph_edit_replace(doc: Document, target: str, value: str) -> None:
+        for paragraph in doc.paragraphs:
+            if target in paragraph.text:
+                for run in paragraph.runs:
+                    if target in run.text:
+                        run.text = run.text.replace(target, value)
+
+    def create_resume_and_cover(self, row: pd.Series) -> None:
+        resume_path, cover_path = self.find_resume_cover_template(row.get("job_category", ""))
+        
+        resume_doc = Document(resume_path)
+        cover_doc = Document(cover_path)
+        
+        company = row.get("company_name", "")
+        job_role = row.get("job_position_title", "Data Analyst")
+        top_skills = row.get("top_skills", "Python, SQL, Power BI, Excel, Machine Learning")
+        location = row.get("location", "Montreal, Canada")
+        
+        today_date = datetime.now().strftime("%d-%b-%Y")
+        output_path = os.path.join(OUTPUT_RESUMES_DIR, f"{company}_{job_role}_{today_date}")
+        os.makedirs(output_path, exist_ok=True)
+        
+        cover_input_dict = {
+            "[job role]": job_role,
+            "[company name]": company,
+            "[company location]": row.get("location", ""),
+            "[date]": today_date,
+            "[why company]": row.get("why_this_company", ""),
+            "[why me]": row.get("why_me", ""),
+            "[location]": row.get("location", "")
+        }
+        
+        self.create_resume(resume_doc, job_role, top_skills, location, output_path)
+        self.create_cover(cover_doc, output_path, cover_input_dict)
+
+    def create_cover(self, cover_doc: Document, output_path: str, cover_input_dict: Dict[str, str]) -> None:
+        for key, value in cover_input_dict.items():
+            self.table_edit_replace(cover_doc, key, value)
+            self.paragraph_edit_replace(cover_doc, key, value)
+        
+        docx_path = os.path.join(output_path, "Krishnakumar Cover Letter.docx")
+        cover_doc.save(docx_path)
+        self.save_to_pdf(output_path, docx_path)
+
+    def create_resume(self, resume_doc: Document, job_role: str, top_skills: str, location: str, output_path: str) -> None:
+        self.table_edit_replace(resume_doc, "[job role]", job_role)
+        self.table_edit_replace(resume_doc, "[location]", location)
+        self.paragraph_edit_replace(resume_doc, "[top skills]", top_skills)
+        docx_path = os.path.join(output_path, "Krishnakumar Resume.docx")
+        resume_doc.save(docx_path)
+        self.save_to_pdf(output_path, docx_path)
+
+    @staticmethod
+    def save_to_pdf(output_path: str, docx_path: str) -> None:
+        libreoffice_path = "/Applications/LibreOffice.app/Contents/MacOS/soffice"
+        try:
+            subprocess.run([
+                libreoffice_path,
+                "--headless",
+                "--convert-to",
+                "pdf",
+                "--outdir",
+                output_path,
+                docx_path
+            ], check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Error converting to PDF: {e}")
+
+if __name__ == "__main__":
+    # Add any test or example usage here
+    pass
+
 
 ==================================================
 

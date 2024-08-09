@@ -2,3 +2,9 @@
 .DS_Store
 **/.DS_Store
 .DS_Store
+
+turn_into_onefile.py
+output.txt
+datamanger.py
+job_application_pre_processing.csv
+job_application.csv
